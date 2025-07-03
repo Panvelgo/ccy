@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Panjarpol Gau-Raksha Sanstha</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Space between nav items */
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.05em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-bar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.nav-bar ul li a:hover::after,
+.nav-bar ul li a.active::after {
+    width: 100%;
+}
+
+.nav-bar ul li a:hover {
+    color: #6e231d;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-icons .donate-button {
+    background-color: #D4AF37;
+    color: #6e231d;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.nav-icons .donate-button:hover {
+    background-color: #c09f2d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default for desktop */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #6e231d;
+}
+
+/* Responsive Adjustments for Navbar */
+.nav-bar .mobile-only-donate {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header .container {
+        flex-wrap: wrap;
+    }
+
+    .nav-bar {
+        width: 100%;
+        order: 3;
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding-bottom: 20px;
+    }
+
+    .nav-bar.active {
+        display: flex;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0; /* Remove gap for vertical list */
+    }
+
+    .nav-bar ul li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-bar ul li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-bar ul li a {
+        display: block;
+        padding: 15px 0;
+    }
+    .nav-bar ul li a::after {
+        display: none; /* Hide underline on mobile */
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .nav-icons {
+        margin-left: auto;
+    }
+
+    .nav-icons .donate-button {
+        display: none;
+    }
+
+    .nav-bar .mobile-only-donate {
+        display: block;
+        margin-top: 20px; /* Space above mobile button */
+    }
+
+    .nav-bar ul li.mobile-only-donate a {
+        background-color: #D4AF37; /* Gold */
+        color: #6e231d; /* Dark red */
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+        border: none; /* Ensure no extra border */
+    }
+
+    .nav-bar ul li.mobile-only-donate a:hover {
+        background-color: #c09f2d;
+    }
+}
+.top-bar {
+    background-color: #6e231d; 
+    border-bottom: 1px solid #ddd;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.top-bar-info span {
+    margin-right: 20px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.top-bar-social a {
+    margin-left: 15px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    font-size: 16px;
+}
+
+.top-bar-social a:hover {
+    color: #d35400; /* Highlight color on hover */
+}
+@media (max-width: 600px) {
+    .top-bar .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .top-bar-info span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 4px;
+    }
+
+    .top-bar-social {
+        align-self: flex-end;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span>Estd. 1908</span>
+                <!-- <span>Redg No: E-35-[K]/1953</span> -->
+                <span>80G Reg No. AADTP5866CF2023101</span>
+            </div>
+            <div class="top-bar-social">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shri Panjarpol Gau-Raksha Sanstha Logo">
+                </a>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="why-gauseva.html">Why Gouseva?</a></li>
+                    <li><a href="benefits-gauseva.html">Benefits of Gauseva</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li class="mobile-only-donate"><a href="donate.html" class="donate-button-mobile">Donate</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="donate.html" class="donate-button">Donate</a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add your page content below -->
+
+    <!-- Script to highlight active page -->
+    <script>
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.nav-bar a');
+
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
+                link.parentElement.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

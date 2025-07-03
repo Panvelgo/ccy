@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Panjarpol Gau-Raksha Sanstha - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      /* Specific styles for Home Page */
+
+/* General Body and Container */
+body {
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f2f5; /* Lighter, softer background */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Reusable Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px; /* More rounded buttons */
+    text-decoration: none;
+    font-weight: 600; /* Slightly bolder text */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #D4AF37; /* Gold */
+    color: #6e231d; /* Dark Red */
+}
+
+.btn-primary:hover {
+    background-color: #c09f2d; /* Slightly darker gold */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: #6e231d; /* Dark Red */
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a1c17; /* Slightly darker red */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Section Headings --- */
+h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
+    font-size: 3em;
+    color: #6e231d;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #D4AF37; /* Gold underline */
+    border-radius: 2px;
+}
+
+/* Hero Section for Home Page */
+.home-hero {
+    position: relative;
+    width: 100%;
+    height: 550px; /* Slightly increased height */
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.home-hero .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out; /* Slower transition for a smoother feel */
+}
+
+.home-hero .slide.active {
+    opacity: 1;
+}
+
+.home-hero .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay for better text readability */
+    z-index: 1;
+}
+
+.home-hero .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+}
+
+.home-hero .hero-content h1 {
+    color: #fff;
+    font-size: 4.5em; /* Larger, more impactful heading */
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Playfair Display', serif;
+}
+
+.home-hero .hero-content p {
+    font-size: 1.6em; /* Slightly larger paragraph */
+    max-width: 900px; /* Wider text area */
+    margin: 0 auto 40px auto; /* More space below paragraph */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    line-height: 1.6; /* Improved readability */
+}
+
+.home-hero .slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 3;
+    padding: 0 30px; /* More padding */
+}
+
+.home-hero .slider-nav button {
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly more opaque */
+    color: #fff;
+    border: none;
+    padding: 15px; /* Smaller, more elegant buttons */
+    font-size: 1.8em; /* Larger icons */
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 50px; /* Fixed width and height for perfect circle */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-hero .slider-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+/* About Us Section - Home Page */
+.home-about-us {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Increased gap for more breathing room */
+    padding: 80px 40px; /* More padding */
+    background-color: #fff;
+    border-radius: 12px; /* Softer corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* More prominent shadow */
+    margin-bottom: 40px;
+}
+
+.home-about-us .content {
+    flex: 2;
+}
+
+.home-about-us .content h2 {
+    text-align: left; /* Align heading to left */
+    font-size: 2.8em;
+    margin-bottom: 25px;
+}
+.home-about-us .content h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.home-about-us .content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 30px; /* More space before button */
+}
+
+.home-about-us .image {
+    flex: 1;
+    text-align: center;
+}
+
+.home-about-us .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* Matches section border-radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on image */
+}
+
+/* Stats Section */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px; /* More space between items */
+    text-align: center;
+    padding: 60px 40px;
+    background-color: #f8f8f8;; /* Light greenish-grey background */
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat-item {
+    background-color: #ffffff; /* White card */
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee; /* Light border */
+}
+
+.stat-item:hover {
+    transform: translateY(-12px); /* Lifts the card up more */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stat-item i {
+    font-size: 4em; /* Even larger icons */
+    color: #D4AF37; /* Gold color for icons */
+    margin-bottom: 20px;
+}
+
+.stat-item h3 {
+    font-size: 3em; /* Larger numbers */
+    margin-bottom: 8px;
+    color: #6e231d;
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-item p {
+    font-size: 1.3em; /* Larger descriptive text */
+    margin: 0;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Image Left/Right Sections (Why Gauseva / Benefits) */
+.home-section-left-image, .home-section-right-image {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.home-section-left-image .content, .home-section-right-image .content {
+    flex: 2;
+}
+
+.home-section-left-image .image, .home-section-right-image .image {
+    flex: 1;
+    text-align: center;
+}
+
+.home-section-left-image .image img, .home-section-right-image .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-section-left-image .content h2, .home-section-right-image .content h2 {
+    text-align: left;
+    font-size: 2.8em;
+    margin-bottom: 25px;
+}
+.home-section-left-image .content h2::after, .home-section-right-image .content h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.home-section-left-image .content p, .home-section-right-image .content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Image on left for Why Gauseva */
+.home-section-left-image .image {
+    order: -1;
+}
+
+/* Donate Section */
+.donate-section {
+    background: linear-gradient(135deg, #6e231d 0%, #bf360c 100%); /* Richer gradient */
+    color: #fff;
+    padding: 100px 30px; /* More vertical padding */
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px 0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+.donate-section h2 {
+    font-size: 3.5em; /* Larger heading */
+    color: #FFD700; /* Pure Gold */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.donate-section h2::after {
+    background-color: #FFD700; /* Gold underline */
+}
+
+.donate-section p {
+    font-size: 1.4em; /* Larger text */
+    max-width: 900px;
+    margin: 0 auto 50px auto; /* More space before button */
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+}
+
+.donate-section .donate-button {
+    background-color: #FFD700; /* Pure Gold button */
+    border: none;
+    color: #6e231d; /* Dark Red text */
+    padding: 20px 50px; /* Larger button */
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.4em; /* Larger font */
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.donate-section .donate-button:hover {
+    transform: scale(1.07); /* More pronounced scale effect */
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5); /* Glowing effect */
+    background-color: #e6c200; /* Slightly darker gold on hover */
+}
+
+/* FAQ Section */
+.faq-section {
+    background-color: #fff; /* White background for clean look */
+    padding: 60px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.faq-section h2 {
+    font-size: 3em;
+    color: #6e231d;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background-color: #f9f9f9; /* Light grey for items */
+    border: 1px solid #e0e0e0; /* Softer border */
+    border-radius: 10px;
+    margin-bottom: 18px; /* More space between items */
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow on hover */
+}
+
+.faq-question {
+    padding: 20px 25px;
+    background-color: #fdd835; /* Gold background */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #6e231d;
+    font-size: 1.2em; /* Slightly larger question text */
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #fce268; /* Lighter gold on hover */
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active {
+    background-color: #6e231d; /* Dark red when active */
+    color: #fff;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 25px;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Slower transition */
+}
+
+.faq-answer.show {
+    max-height: 300px; /* Increased max-height for more content */
+    padding: 20px 25px;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding-bottom: 10px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Our Social Presence */
+.social-presence-section {
+    background-color: #f8f8f8; /* Light background */
+    color: #333;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.social-presence-section h2 {
+    color: #6e231d;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.social-presence-section .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Space between social links */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.social-presence-section .social-links a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #6e231d; /* Dark red */
+    color: #fff;
+    padding: 15px 35px; /* More padding */
+    border-radius: 8px; /* Slightly less rounded */
+    font-size: 1.3em; /* Larger text */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-presence-section .social-links a:hover {
+    background-color: #bf360c; /* Darker red */
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-presence-section .social-links a i {
+    margin-right: 12px; /* More space for icon */
+    font-size: 1.5em; /* Larger icon */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .home-hero {
+        height: 450px;
+    }
+    .home-hero .hero-content h1 {
+        font-size: 3.5em;
+    }
+    .home-hero .hero-content p {
+        font-size: 1.3em;
+    }
+
+    .home-about-us, .home-section-left-image, .home-section-right-image {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 30px;
+    }
+    .home-about-us .content h2, .home-section-left-image .content h2, .home-section-right-image .content h2 {
+        text-align: center;
+    }
+    .home-about-us .content h2::after, .home-section-left-image .content h2::after, .home-section-right-image .content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .home-section-left-image .image {
+        order: unset;
+    }
+    .stats-section {
+        flex-direction: column;
+        padding: 50px 20px;
+        gap: 25px;
+    }
+    .stat-item {
+        margin-bottom: 0; /* Remove margin-bottom as gap handles spacing */
+    }
+
+    .donate-section {
+        padding: 80px 20px;
+    }
+    .donate-section h2 {
+        font-size: 2.8em;
+    }
+    .donate-section p {
+        font-size: 1.2em;
+    }
+
+    .social-presence-section {
+        padding: 60px 20px;
+    }
+    .social-presence-section h2 {
+        font-size: 2.5em;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+    .footer-column .contact-info p {
+        justify-content: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.5em;
+    }
+    h2::after {
+        width: 60px;
+    }
+
+    .home-hero {
+        height: 400px;
+    }
+    .home-hero .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .home-hero .hero-content p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+    .home-hero .slider-nav button {
+        padding: 12px;
+        font-size: 1.5em;
+        width: 45px;
+        height: 45px;
+    }
+
+    .home-about-us, .home-section-left-image, .home-section-right-image {
+        padding: 50px 15px;
+    }
+    .home-about-us .content h2, .home-section-left-image .content h2, .home-section-right-image .content h2 {
+        font-size: 2.2em;
+    }
+    .home-about-us .content p, .home-section-left-image .content p, .home-section-right-image .content p {
+        font-size: 1em;
+    }
+
+    .stat-item h3 {
+        font-size: 2.5em;
+    }
+    .stat-item p {
+        font-size: 1.1em;
+    }
+
+    .donate-section h2 {
+        font-size: 2.4em;
+    }
+    .donate-section p {
+        font-size: 1.1em;
+        margin-bottom: 35px;
+    }
+    .donate-section .donate-button {
+        padding: 15px 35px;
+        font-size: 1.1em;
+    }
+
+    .faq-question {
+        font-size: 1.1em;
+        padding: 18px 20px;
+    }
+    .faq-answer.show {
+        padding: 18px 20px;
+    }
+
+    .social-presence-section h2 {
+        font-size: 2.2em;
+    }
+    .social-presence-section .social-links a {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+    .social-presence-section .social-links a i {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    h2::after {
+        width: 50px;
+    }
+
+    .home-hero {
+        height: 350px;
+    }
+    .home-hero .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .home-hero .hero-content p {
+        display: none; /* Hide paragraph on very small screens for brevity */
+    }
+    .home-hero .slider-nav {
+        padding: 0 15px;
+    }
+    .home-hero .slider-nav button {
+        padding: 10px;
+        font-size: 1.2em;
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-about-us, .home-section-left-image, .home-section-right-image, .stats-section, .donate-section, .faq-section, .social-presence-section {
+        padding: 30px 10px;
+    }
+    .home-about-us .content h2, .home-section-left-image .content h2, .home-section-right-image .content h2 {
+        font-size: 1.8em;
+    }
+    .home-about-us .content p, .home-section-left-image .content p, .home-section-right-image .content p {
+        font-size: 0.9em;
+    }
+
+    .stat-item {
+        padding: 25px 15px;
+    }
+    .stat-item i {
+        font-size: 3.5em;
+    }
+    .stat-item h3 {
+        font-size: 2em;
+    }
+    .stat-item p {
+        font-size: 0.9em;
+    }
+
+    .donate-section h2 {
+        font-size: 2em;
+    }
+    .donate-section p {
+        font-size: 1em;
+        margin-bottom: 25px;
+    }
+    .donate-section .donate-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .faq-question {
+        font-size: 1em;
+        padding: 15px;
+    }
+    .faq-answer.show {
+        padding: 15px;
+    }
+
+    .social-presence-section h2 {
+        font-size: 1.8em;
+    }
+    .social-presence-section .social-links a {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .social-presence-section .social-links a i {
+        font-size: 1.1em;
+    }
+
+    .footer-column .logo img {
+        height: 80px;
+    }
+    .footer-column h3 {
+        font-size: 1.3em;
+    }
+    .footer-column ul li a {
+        font-size: 0.9em;
+    }
+}
+
+/* General Styles for Header (from style.css) */
+/* Assuming these are in your style.css, keeping them here for context */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 70px;
+    transition: transform 0.3s ease;
+}
+.header .logo img:hover {
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <section class="home-hero">
+        <div class="slide" style="background-image: url('images/home/image3.jpg');"></div>
+        <div class="slide" style="background-image: url('images/home/image5.jpg');"></div>
+        <div class="hero-content">
+            <h1>Shri Panjarpol Gau-Raksha Sanstha</h1>
+            <p>Committed to the preservation, protection, and welfare of cows.</p>
+        </div>
+        <div class="slider-nav">
+            <button class="prev-slide">&#10094;</button>
+            <button class="next-slide">&#10095;</button>
+        </div>
+    </section>
+
+    <main>
+        <br>
+        <div class="container">
+            <section class="home-about-us">
+                <div class="content">
+                    <h2>About us</h2>
+                    <p>Shri Panjarpol Gau-Raksha Sanstha is a non-governmental organization (NGO) committed to the preservation, protection, and welfare of cows. Founded on the principles of compassion, respect, and sustainability, our organization strives to create a harmonious coexistence between humans and cows. With a deep-rooted belief in the sacredness of cows, we work tirelessly to safeguard their well-being and promote their significance in society.</p>
+                    <a href="about.html" class="read-more-btn">Read More</a>
+                </div>
+                <div class="image">
+                    <img src="images/home/image5.jpg" alt="About Us Cows">
+                </div>
+            </section>
+
+<section class="stats-section">
+  <div class="stat-item">
+    <i class="fas fa-cow"></i>
+    <h3>50 +</h3>
+    <p>Cows</p>
+  </div>
+  <div class="stat-item">
+    <i class="fas fa-mountain-sun"></i>
+    <h3>170</h3>
+    <p>Acres of Land</p>
+  </div>
+  <div class="stat-item">
+    <i class="fas fa-seedling"></i>
+    <h3>5</h3>
+    <p>Acres of Pasture Land</p>
+  </div>
+</section>
+
+            <section class="home-section-left-image">
+                <div class="image">
+                    <img src="images/beni/image2.jpg" alt="Why Gauseva?">
+                </div>
+                <div class="content">
+                    <h2>Why Gouseva?</h2>
+                    <p>Cows hold a revered place in our culture, symbolizing purity, abundance, and divinity. Engaging in GoSeva allows us to express our compassion and practice ahimsa, the principle of non-violence. By providing shelter, nourishment, and medical care to cows, we ensure their well-being and protect them from harm. In doing so, we uphold our duty to show kindness to all living beings and cultivate a harmonious environment.</p>
+                    <p>Join us in this noble cause of GoSeva and experience the joy that comes from serving and protecting these sacred animals. Together, let us create a world where the cows roam freely, revered and cherished for their beauty, grace, and the abundance they bring.</p>
+                    <a href="why-gauseva.html" class="know-more-btn">Know More</a>
+                </div>
+            </section>
+
+            <section class="home-section-right-image">
+                <div class="content">
+                    <h2>Benefits of Gauseva</h2>
+                    <p>Engaging in Gauseva, the noble act of serving and caring for cows, brings a plethora of benefits that resonate on multiple levels. It allows us to fulfill our religious and cultural duties, fostering a deep connection to our traditions. By actively participating in Gauseva initiatives, we contribute to the preservation of indigenous cow breeds, safeguarding their genetic heritage and cultural significance.</p>
+                    <p>Moreover, Gauseva promotes sustainable agriculture through the utilization of cow dung for organic fertilizer and biofuel. Beyond the tangible advantages, Gauseva nurtures personal growth, gratitude, and spiritual connection, offering a transformative experience. Embracing Gauseva not only positively impacts the lives of cows but also fosters a more compassionate and harmonious society for all beings.</p>
+                    <a href="benefits-gauseva.html" class="know-more-btn">Know More</a>
+                </div>
+                <div class="image">
+                    <img src="images/about-us/image6.jpg" alt="Benefits of Gauseva">
+                </div>
+            </section>
+            <section class="donate-section">
+                <h2>Donation Section</h2>
+                <p>We are appealing for donations to support our Goshala, a shelter for cows in need. Your contributions will provide shelter, medical care, and nutrition for these sacred animals. Help us preserve our cultural heritage and make a difference in their lives by donating and becoming an advocate for their well-being. Together, we can bring hope, love, and care to the cows that rely on us. Visit our website or contact us for more information on how to contribute.</p>
+                <a href="donate.html" class="donate-button">Donate</a>
+            </section>
+          
+
+           
+
+            <section class="social-presence-section">
+                <h2>Our Social Presence</h2>
+                <div class="social-links">
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Follow on Instagram</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-column">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Goraksha Panvel Logo" style="height: 100px;">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="why-gauseva.html">Why Gauseva?</a></li>
+                    <li><a href="benefits-gauseva.html">Benefits of Gauseva</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="#">Donate</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal Pages</h3>
+                <ul>
+                    <li><a href="pp.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> +91 9820559538</p>
+                    <p><i class="fas fa-envelope"></i> panvelgoshala@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Panvel, Raigarh, Maharashtra, India</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Goraksha Panvel </p>
+             
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Home page specific JavaScript for image carousel and FAQ accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero Image Carousel
+            const slides = document.querySelectorAll('.home-hero .slide');
+            const prevButton = document.querySelector('.home-hero .prev-slide');
+            const nextButton = document.querySelector('.home-hero .next-slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+                showSlide(currentSlide);
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+                showSlide(currentSlide);
+            });
+
+            // Auto-advance slides
+            setInterval(() => {
+                currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+                showSlide(currentSlide);
+            }, 5000); // Change slide every 5 seconds
+
+            showSlide(currentSlide); // Initialize first slide
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+
+                    // Close all other open answers
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.classList.remove('show');
+                            otherQuestion.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current answer
+                    question.classList.toggle('active');
+                    answer.classList.toggle('show');
+                    if (question.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+          
+
+
+            // Hamburger menu functionality
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navBar = document.querySelector('.nav-bar');
+
+            hamburgerMenu.addEventListener('click', () => {
+                navBar.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

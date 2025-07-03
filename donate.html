@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page - ISKCON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> <style>
+        /*
+        * It's generally best practice to put all your styles in a separate CSS file (e.g., style.css).
+        * I've moved the common body and container styles to style.css in the suggested structure below.
+        * However, if these styles are truly ONLY for the donation page, keeping them here is acceptable.
+        * For modularity and consistency, it's recommended to have a global stylesheet.
+        */
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+     /* Styles specific to the donation-container and its contents */
+        .donation-container {
+            max-width: 1100px;
+            width: 100%;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Slightly more prominent shadow */
+             margin: 20px auto; /* Adds spacing from top and bottom, auto centers horizontally */
+        }
+
+        header h1 {
+            color: #6a0dad;
+            font-size: 28px; /* Slightly larger for better prominence */
+            text-align: center;
+            margin-bottom: 8px; /* Adjusted margin */
+        }
+
+        header p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px; /* More space before options */
+            font-size: 16px;
+        }
+
+        .donation-options {
+            display: flex;
+            justify-content: center; /* Center items when there's space */
+            gap: 25px; /* Increased gap */
+            flex-wrap: wrap;
+        }
+
+        .donation-box {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px; /* Increased padding */
+            width: 320px; /* Slightly wider boxes */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Softer shadow */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease-in-out; /* Add hover effect */
+        }
+
+        .donation-box:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        .donation-box h2 {
+            font-size: 20px; /* Larger heading */
+            margin-top: 0;
+            margin-bottom: 25px; /* More space */
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Increased gap */
+            font-weight: 600; /* Bolder heading */
+        }
+
+        .donation-box .details {
+            font-size: 16px; /* Slightly larger text */
+            color: #555;
+            flex-grow: 1; /* Allow details section to grow */
+        }
+
+        .details p {
+            margin: 12px 0; /* Adjusted margin */
+        }
+
+        .details strong {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .copy-field {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0; /* Lighter background for copy fields */
+            padding: 8px 12px; /* Adjusted padding */
+            border-radius: 5px;
+            margin-bottom: 15px; /* Adjusted margin */
+            border: 1px solid #e5e5e5; /* Subtle border */
+        }
+
+        .copy-field p {
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-grow: 1; /* Allow text to take space */
+            font-weight: 500;
+            color: #333;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px; /* Larger icon */
+            color: #6a0dad;
+            margin-left: 10px; /* Space from text */
+            transition: color 0.2s ease-in-out;
+        }
+
+        .copy-btn:hover {
+            color: #8c4ad0; /* Darker purple on hover */
+        }
+
+        .paytm-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .paytm-logo img {
+            height: 25px; /* Slightly larger logo */
+        }
+
+        .paytm-logo span {
+            font-size: 18px; /* Larger text */
+            font-weight: 600;
+            color: #333;
+        }
+
+        .mobile-number {
+            font-size: 20px; /* More prominent mobile number */
+            font-weight: 600;
+        }
+
+        .donate-now-btn {
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 14px 0; /* More padding */
+            width: 100%;
+            font-size: 17px; /* Larger text */
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .donate-now-btn:hover {
+            background-color: #8c4ad0; /* Darker purple on hover */
+        }
+
+        .qr-code {
+            text-align: center;
+            margin-top: auto; /* Pushes QR to the bottom if content above is shorter */
+            padding-top: 15px; /* Space above QR code */
+        }
+
+        .qr-code img {
+            width: 120px; /* Larger QR code */
+            height: 120px;
+            border: 1px solid #eee; /* Subtle border around QR */
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        .upi-logo {
+            height: 32px; /* Larger UPI logo */
+            vertical-align: middle; /* Align with text */
+            margin-left: 5px; /* Space between text and logo */
+        }
+
+        .limit-text {
+            font-size: 13px;
+            color: #777;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Copy Notification Styles */
+        #copy-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden; /* Use visibility for smooth transition */
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        #copy-notification.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 992px) {
+            .donation-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            .donation-box {
+                width: 90%; /* Adjust width for smaller screens */
+                max-width: 450px; /* Limit max width */
+            }
+            header h1 {
+                font-size: 24px;
+            }
+            header p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .donation-container {
+                padding: 20px;
+            }
+            .donation-box {
+                padding: 20px;
+            }
+            .qr-code img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="donation-container">
+        <header>
+            <h1>Donate via NEFT/RTGS/IMPS/PayTm/UPI</h1>
+            <p>Your kindness can change lives.</p>
+        </header>
+
+        <main class="donation-options">
+            <div class="donation-box">
+                <h2><i class="fas fa-bank"></i> Donate via NEFT / RTGS</h2>
+                <div class="details">
+                    <p><strong>Bank Name:</strong> Bank of Maharashtra</p>
+                    <p><strong>Account Name:</strong> Panjarapol Gorakshan  Sanstha</p>
+                    <div class="copy-field">
+                        <p><strong>Account No:</strong> <span id="account-no">20121892958</span></p>
+                        <button class="copy-btn" onclick="copyToClipboard('account-no')" aria-label="Copy account number"><i class="far fa-copy"></i></button>
+                    </div>
+                    <div class="copy-field">
+                        <p><strong>IFSC Code:</strong> <span id="ifsc-code">MAHB0000027</span></p>
+                        <button class="copy-btn" onclick="copyToClipboard('ifsc-code')" aria-label="Copy IFSC code"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+            </div>
+
+    
+            <div class="donation-box">
+                <h2><i class="fas fa-qrcode"></i> Donate through <img class="upi-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI Logo"></h2>
+                <div class="details">
+                    <div class="copy-field">
+                        <p><span id="upi-id">20121892958@mahb</span></p>
+                        <button class="copy-btn" onclick="copyToClipboard('upi-id')" aria-label="Copy UPI ID"><i class="far fa-copy"></i></button>
+                    </div>
+                    <p class="limit-text">Check your UPI limit with your bank. Max. Limit 1 lac per day</p>
+                </div>
+                <div class="qr-code">
+                    <img src="images/qr.png" alt="QR Code for UPI">
+                </div>
+            </div>
+        </main>
+    </div>
+
+  <div id="footer-placeholder"></div>
+
+  <div id="copy-notification">Copied to clipboard!</div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-column">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="Goraksha Panvel Logo" style="height: 100px;">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="why-gauseva.html">Why Gauseva?</a></li>
+          <li><a href="benefits-gauseva.html">Benefits of Gauseva</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="#">Donate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Legal Pages</h3>
+        <ul>
+          <li><a href="pp.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Information</h3>
+        <div class="contact-info">
+          <p><i class="fas fa-phone-alt"></i> +91 9820559538</p>
+          <p><i class="fas fa-envelope"></i> panvelgoshala@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Panvel, Raigarh, Maharashtra, India</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Goraksha Panvel</p>
+      <div class="language-selector">
+        <select>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyToClipboard(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const notification = document.getElementById("copy-notification");
+        notification.classList.add("show");
+        setTimeout(() => notification.classList.remove("show"), 2000);
+      });
+    }
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
