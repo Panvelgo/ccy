@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f2f5; /* Lighter, softer background */
+    background-color: #ffffff; /* Lighter, softer background */
     color: #333;
 }
 
@@ -227,7 +227,7 @@ h2::after {
     gap: 30px; /* More space between items */
     text-align: center;
     padding: 60px 40px;
-    background-color: #f8f8f8;; /* Light greenish-grey background */
+    background-color: #fffef1;; /* Light greenish-grey background */
     border-radius: 12px;
     margin-bottom: 40px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -318,54 +318,186 @@ h2::after {
 }
 
 /* Donate Section */
+/* Section Styling */
 .donate-section {
-    background: linear-gradient(135deg, #6e231d 0%, #bf360c 100%); /* Richer gradient */
-    color: #fff;
-    padding: 100px 30px; /* More vertical padding */
-    text-align: center;
-    border-radius: 12px;
-    margin: 40px 0;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    /* max-width: 1100px; */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fffef1;;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    font-family: 'Roboto', sans-serif;
 }
 
 .donate-section h2 {
-    font-size: 3.5em; /* Larger heading */
-    color: #FFD700; /* Pure Gold */
+    font-size: 3em; /* Larger numbers */
+    margin-bottom: 8px;
+    color: #6e231d;
+    font-family: 'Playfair Display', serif;
+}
+
+/* .donate-section p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+} */
+
+/* Donation Boxes Layout */
+.donation-options {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Individual Donation Box */
+.donation-box {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    width: 320px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+}
+
+.donation-box:hover {
+    transform: translateY(-5px);
+}
+
+.donation-box h2 {
+    font-size: 20px;
+    margin-top: 0;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
 }
 
-.donate-section h2::after {
-    background-color: #FFD700; /* Gold underline */
+/* Text Details */
+.details p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
 }
 
-.donate-section p {
-    font-size: 1.4em; /* Larger text */
-    max-width: 900px;
-    margin: 0 auto 50px auto; /* More space before button */
-    color: rgba(255, 255, 255, 0.95);
-    line-height: 1.7;
+.details strong {
+    color: #333;
+    font-weight: 500;
 }
 
-.donate-section .donate-button {
-    background-color: #FFD700; /* Pure Gold button */
+/* Copy Field */
+.copy-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #e5e5e5;
+}
+
+.copy-field p {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+}
+
+.copy-btn {
+    background: none;
     border: none;
-    color: #6e231d; /* Dark Red text */
-    padding: 20px 50px; /* Larger button */
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.4em; /* Larger font */
-    font-weight: bold;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    display: inline-block;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 18px;
+    color: #6a0dad;
+    margin-left: 10px;
+    transition: color 0.2s ease-in-out;
 }
 
-.donate-section .donate-button:hover {
-    transform: scale(1.07); /* More pronounced scale effect */
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5); /* Glowing effect */
-    background-color: #e6c200; /* Slightly darker gold on hover */
+.copy-btn:hover {
+    color: #8c4ad0;
 }
+
+/* UPI Logo */
+.upi-logo {
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+
+/* QR Code */
+.qr-code {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.qr-code img {
+    width: 110px;
+    height: 110px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 5px;
+}
+
+/* UPI Limit Note */
+.limit-text {
+    font-size: 13px;
+    color: #777;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Copy Notification */
+#copy-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#copy-notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .donation-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .donation-box {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .donate-section p {
+        text-align: center;
+         font-size: 0.9em;
+    }
+}
+
 
 /* FAQ Section */
 .faq-section {
@@ -531,15 +663,7 @@ h2::after {
         margin-bottom: 0; /* Remove margin-bottom as gap handles spacing */
     }
 
-    .donate-section {
-        padding: 80px 20px;
-    }
-    .donate-section h2 {
-        font-size: 2.8em;
-    }
-    .donate-section p {
-        font-size: 1.2em;
-    }
+   
 
     .social-presence-section {
         padding: 60px 20px;
@@ -608,17 +732,7 @@ h2::after {
         font-size: 1.1em;
     }
 
-    .donate-section h2 {
-        font-size: 2.4em;
-    }
-    .donate-section p {
-        font-size: 1.1em;
-        margin-bottom: 35px;
-    }
-    .donate-section .donate-button {
-        padding: 15px 35px;
-        font-size: 1.1em;
-    }
+   
 
     .faq-question {
         font-size: 1.1em;
@@ -691,17 +805,6 @@ h2::after {
         font-size: 0.9em;
     }
 
-    .donate-section h2 {
-        font-size: 2em;
-    }
-    .donate-section p {
-        font-size: 1em;
-        margin-bottom: 25px;
-    }
-    .donate-section .donate-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
 
     .faq-question {
         font-size: 1em;
@@ -758,6 +861,153 @@ header {
     transform: scale(1.05);
 }
 
+/* Main Call to Action Button - Used in CSR section */
+/* (Ensure this is already defined in your global CSS. If not, add it.) */
+.main-cta-button {
+    background-color: #6e231d; /* Dark Red */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block; /* For padding and transforms */
+}
+
+.main-cta-button:hover {
+    background-color: #D4AF37; /* Gold */
+    color: #6e231d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* CSR Activities Section Styling */
+.csr-activities-section {
+    padding: 80px 0; /* More padding for a distinct section */
+    background-color: #f5f7fa; /* Light background, consistent with body */
+    text-align: center;
+}
+
+.csr-activities-section h2 {
+    font-size: 2.8em;
+    color: #6e231d; /* Dark Red */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.csr-activities-section .section-intro-text {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.csr-content-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content within the row */
+    gap: 50px; /* Space between image and text */
+    margin-bottom: 80px; /* Space between the two rows */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.csr-content-row:nth-child(even) { /* For the second row (and fourth, etc.) */
+    flex-direction: row-reverse; /* Reverse order for diagonal effect */
+    margin-top: -40px; /* Pull it up to overlap the previous row slightly */
+    margin-bottom: 80px; /* Ensure space after it */
+}
+
+.csr-image-wrapper {
+    flex: 1; /* Takes up equal space */
+    min-width: 45%; /* Ensure image takes a good portion */
+    max-width: 500px; /* Limit image size */
+}
+
+.csr-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Remove extra space below image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.csr-text-content {
+    flex: 1; /* Takes up equal space */
+    text-align: left; /* Text content aligns left */
+    padding: 10px 0; /* Add some padding around text */
+}
+
+.csr-text-content h3 {
+    font-size: 2.2em;
+    color: #6e231d;
+    margin-bottom: 15px;
+}
+
+.csr-text-content p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.csr-button-container {
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+/* Responsive Adjustments for CSR Activities Section */
+@media (max-width: 992px) {
+    .csr-activities-section {
+        padding: 50px 0;
+    }
+    .csr-activities-section h2 {
+        font-size: 2.2em;
+    }
+    .csr-activities-section .section-intro-text {
+        font-size: 1em;
+        margin-bottom: 40px;
+        padding: 0 15px;
+    }
+    .csr-content-row {
+        flex-direction: column; /* Stack image and text vertically */
+        gap: 20px; /* Reduced gap */
+        margin-bottom: 40px; /* Space between stacked rows */
+        padding: 20px;
+    }
+    .csr-content-row:nth-child(even) { /* For the second row (and fourth, etc.) */
+        flex-direction: column; /* Ensure stacking even if originally reversed */
+        margin-top: 0; /* Remove negative margin for mobile stacking */
+    }
+    .csr-image-wrapper {
+        min-width: unset; /* Remove min-width */
+        width: 100%; /* Image takes full width */
+    }
+    .csr-text-content {
+        text-align: center; /* Center text content on mobile */
+    }
+    .csr-text-content h3 {
+        font-size: 1.8em;
+    }
+    .csr-text-content p {
+        font-size: 1em;
+    }
+    .csr-button-container {
+        margin-top: 40px;
+    }
+    .main-cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -792,12 +1042,12 @@ header {
 <section class="stats-section">
   <div class="stat-item">
     <i class="fas fa-cow"></i>
-    <h3>50 +</h3>
+    <h3>100 +</h3>
     <p>Cows</p>
   </div>
   <div class="stat-item">
     <i class="fas fa-mountain-sun"></i>
-    <h3>170</h3>
+    <h3>170 +</h3>
     <p>Acres of Land</p>
   </div>
   <div class="stat-item">
@@ -805,6 +1055,37 @@ header {
     <h3>5</h3>
     <p>Acres of Pasture Land</p>
   </div>
+</section>
+<!-- CSR Activities Section -->
+<section class="csr-activities-section">
+    <div class="container">
+        <h2>Our Commitment: CSR & Sustainable Development</h2>
+        <p class="section-intro-text">At Shri Panjarpol Gau-Raksha Sanstha, our vision extends beyond protection. We are dedicated to pioneering sustainable practices and fostering community well-being through our comprehensive CSR initiatives.</p>
+
+        <div class="csr-content-row">
+            <div class="csr-image-wrapper">
+                <img src="images/about-us/csr1.png" alt="Proposed Gaushala Cluster Layout" class="csr-image">
+            </div>
+            <div class="csr-text-content">
+                <h3>Advanced Gaushala Planning</h3>
+                <p>Our upcoming Gaushala at Panvel is meticulously designed for optimal cow comfort and efficient management. The cluster layout focuses on spacious sheds, dedicated grazing fields, and integrated facilities, ensuring a healthy and serene environment for every bovine resident.</p>
+            </div>
+        </div>
+
+        <div class="csr-content-row reverse-layout">
+            <div class="csr-image-wrapper">
+                <img src="images/about-us/csr2.png" alt="Proposed Gaushala Movement Mapping" class="csr-image">
+            </div>
+            <div class="csr-text-content">
+                <h3>Efficient Movement & Care</h3>
+                <p>The proposed design incorporates advanced movement mapping for cows, staff, and services, minimizing stress on animals and maximizing operational efficiency. This thoughtful planning ensures seamless daily routines, from feeding to medical care, enhancing overall well-being.</p>
+            </div>
+        </div>
+
+        <div class="csr-button-container">
+            <a href="csr.html" class="main-cta-button">Know More About Our CSR</a>
+        </div>
+    </div>
 </section>
 
             <section class="home-section-left-image">
@@ -830,12 +1111,63 @@ header {
                     <img src="images/about-us/image6.jpg" alt="Benefits of Gauseva">
                 </div>
             </section>
-            <section class="donate-section">
-                <h2>Donation Section</h2>
-                <p>We are appealing for donations to support our Goshala, a shelter for cows in need. Your contributions will provide shelter, medical care, and nutrition for these sacred animals. Help us preserve our cultural heritage and make a difference in their lives by donating and becoming an advocate for their well-being. Together, we can bring hope, love, and care to the cows that rely on us. Visit our website or contact us for more information on how to contribute.</p>
-                <a href="donate.html" class="donate-button">Donate</a>
-            </section>
-          
+         <section class="donate-section">
+  <h2>Donation Section</h2>
+  <div class="content">
+     <p>
+    We are appealing for donations to support our Goshala, a shelter for cows in need.
+    Your contributions will provide shelter, medical care, and nutrition for these sacred animals.
+    Help us preserve our cultural heritage and make a difference in their lives by donating and becoming
+    an advocate for their well-being. Together, we can bring hope, love, and care to the cows that rely
+    on us. 
+  </p>
+  </div>
+ 
+
+  <div class="donation-options">
+    <div class="donation-box">
+      <h2><i class="fas fa-bank"></i> Donate via NEFT / RTGS</h2>
+      <div class="details">
+        <p><strong>Bank Name:</strong> Bank of Maharashtra</p>
+        <p><strong>Account Name:</strong> Panjarapol Gorakshan Sanstha</p>
+        <div class="copy-field">
+          <p><strong>Account No:</strong> <span id="account-no">20121892958</span></p>
+          <button class="copy-btn" onclick="copyToClipboard('account-no')" aria-label="Copy account number">
+            <i class="far fa-copy"></i>
+          </button>
+        </div>
+        <div class="copy-field">
+          <p><strong>IFSC Code:</strong> <span id="ifsc-code">MAHB0000027</span></p>
+          <button class="copy-btn" onclick="copyToClipboard('ifsc-code')" aria-label="Copy IFSC code">
+            <i class="far fa-copy"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="donation-box">
+      <h2>
+        <i class="fas fa-qrcode"></i> Donate through
+        <img class="upi-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI Logo">
+      </h2>
+      <div class="details">
+        <div class="copy-field">
+          <p><span id="upi-id">20121892958@mahb</span></p>
+          <button class="copy-btn" onclick="copyToClipboard('upi-id')" aria-label="Copy UPI ID">
+            <i class="far fa-copy"></i>
+          </button>
+        </div>
+        <p class="limit-text">Check your UPI limit with your bank</p>
+      </div>
+      <div class="qr-code">
+        <img src="images/qr.png" alt="QR Code for UPI">
+      </div>
+    </div>
+  </div>
+  <div id="copy-notification">Copied to clipboard!</div>
+
+</section>
+
 
            
 
@@ -954,7 +1286,14 @@ header {
                 });
             });
 
-          
+           function copyToClipboard(id) {
+    const text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const notification = document.getElementById("copy-notification");
+      notification.classList.add("show");
+      setTimeout(() => notification.classList.remove("show"), 2000);
+    });
+  }
 
 
             // Hamburger menu functionality

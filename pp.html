@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - [Your Gaushala/Website Name]</title>
-    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shri Panjarpol Gau-Raksha Sanstha - Home</title>
+    <title>Privacy Policy - Shri Panjarpol Gau-Raksha Sanstha</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-    
-        /* General Body and Container Styles (if not in style.css) */
+        /* General Body and Container Styles (Ensure consistency with style.css) */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif; /* Use Roboto for consistency */
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f7fa; /* Light background, consistent with your site */
             color: #333;
+            padding-top: 130px; /* Adjust this value based on your fixed header's actual height */
         }
 
         .container {
@@ -28,11 +23,9 @@
             padding: 0 20px;
         }
 
-        /* Specific styles for Privacy Policy Page (based on About Us) */
-
-        /* Hero Section (reusing about-hero for consistency) */
+        /* Hero Section for Privacy Policy */
         .privacy-hero {
-            background-image: url('images/beni/image5.jpg'); /* Use a relevant hero image */
+            background-image: url('images/beni/image5.jpg'); /* Use a relevant hero image, updated path */
             height: 350px;
             background-size: cover;
             background-position: center;
@@ -42,7 +35,7 @@
             text-align: center;
             color: #fff;
             position: relative;
-            overflow: hidden; /* For animation effects */
+            overflow: hidden;
         }
 
         .privacy-hero::before {
@@ -52,7 +45,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
             z-index: 1;
         }
 
@@ -63,9 +56,9 @@
         }
 
         .privacy-hero .hero-content h1 {
-            font-size: 3em;
+            font-size: 3.5em; /* Slightly larger heading */
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Stronger shadow */
             margin: 0;
             opacity: 0;
             transform: translateY(20px);
@@ -80,179 +73,621 @@
             }
         }
 
-        /* Privacy Policy Content Section (reusing about-content-section) */
+        /* Privacy Policy Content Section */
         .privacy-content-section {
             padding: 60px 0;
             background-color: #fff;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-top: -50px; /* Pull it up into the hero for a layered effect */
+            margin-bottom: 40px; /* Space before footer */
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+            position: relative; /* For z-index */
+            z-index: 3; /* Ensure it's above the hero overlay */
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
             animation: fadeInSlideUp 0.8s forwards ease-out;
             animation-delay: 0.6s;
         }
 
-        .privacy-content-section h2 {
+        .privacy-content-section h1 { /* Main title within content section */
             text-align: center;
             margin-bottom: 40px;
-            font-size: 2.5em;
-            color: #e65100;
+            font-size: 2.8em; /* Adjusted size */
+            color: #6e231d; /* Dark Red - your brand color */
+            padding-bottom: 10px;
+            border-bottom: 3px solid #D4AF37; /* Gold border */
+            display: inline-block; /* To make border fit content */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .privacy-content-section h3 {
-            color: #e65100;
-            margin-top: 30px;
-            margin-bottom: 15px;
+            color: #6e231d; /* Dark Red - your brand color */
+            margin-top: 40px;
+            margin-bottom: 20px;
             font-size: 1.8em;
-            border-bottom: 2px solid #ff7043;
-            padding-bottom: 5px;
+            border-left: 5px solid #D4AF37; /* Gold left border */
+            padding-left: 15px;
         }
 
         .privacy-content-section p {
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            margin-bottom: 18px; /* Slightly more spacing */
+            font-size: 1.05em; /* Slightly smaller for body text readability */
             line-height: 1.7;
         }
 
         .privacy-content-section ul {
             list-style: disc;
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-left: 30px; /* More indentation */
+            margin-bottom: 20px;
+            padding-left: 0; /* Reset default padding */
         }
 
         .privacy-content-section ul li {
-            margin-bottom: 8px;
-            font-size: 1.05em;
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #555;
         }
 
         .privacy-content-section strong {
-            color: #e65100;
+            color: #6e231d; /* Dark Red */
         }
 
+        /* --- Navbar and Footer Styles (Copied from your provided snippet for completeness) --- */
+        /* Ensure these are consistent with your global style.css */
 
-        /* Responsive adjustments for Footer */
-        @media (max-width: 768px) {
+        /* Main Fixed Header Container */
+        .main-fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensures the entire header stays on top */
+            background-color: #fff; /* Default background for the whole fixed header block */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Top part of the header (Logo, Nav, Donate, Hamburger) */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 15px; /* Padding for the top section */
+            width: 100%;
+        }
+
+        .logo img {
+            height: 70px; /* Adjust logo height as needed */
+            display: block;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px; /* Space between nav items */
+        }
+
+        .nav-bar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1.05em;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-bar ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-bar ul li a:hover::after,
+        .nav-bar ul li a.active::after {
+            width: 100%;
+        }
+
+        .nav-bar ul li a:hover {
+            color: #6e231d;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-icons .donate-button {
+            background-color: #D4AF37;
+            color: #6e231d;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icons .donate-button:hover {
+            background-color: #c09f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hamburger-menu {
+            display: none; /* Hidden by default for desktop */
+            font-size: 1.8em;
+            cursor: pointer;
+            color: #6e231d;
+            width: 28px; /* Ensure a consistent width for smooth transition */
+            text-align: center;
+        }
+
+        /* Info Bar Styling - This is now part of the fixed header */
+        .header-info-bar {
+            background-color: #6e231d; /* Dark red */
+            color: #ffffff;
+            padding: 10px 0; /* Padding for the info bar */
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+        }
+
+        .header-info-bar .container {
+            display: flex;
+            justify-content: space-between; /* Pushes items to left and right */
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        /* Floating Donate Button Styling (Desktop) */
+        .floating-donate-btn {
+            position: fixed; /* Makes the button float */
+            bottom: 30px; /* 30px from the bottom of the viewport */
+            right: 30px; /* 30px from the right of the viewport */
+            background-color: #D4AF37; /* Gold color */
+            color: #6e231d; /* Dark red text */
+            padding: 15px 25px;
+            border-radius: 30px; /* More rounded corners */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for floating effect */
+            z-index: 1000; /* Ensures it stays above other content (same as header) */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            animation: none; /* Reset animation for desktop */
+        }
+
+        .floating-donate-btn:hover {
+            background-color: #c09f2d; /* Darker gold on hover */
+            transform: translateY(-3px); /* Lifts the button slightly */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #6e231d; /* Dark Red */
+            color: #fff;
+            padding: 50px 0 20px 0;
+            font-size: 0.95em;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px; /* Space between columns */
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px; /* Minimum width for columns before wrapping */
+            margin-bottom: 20px;
+        }
+
+        .footer-column .logo img {
+            height: 100px; /* Adjust logo size */
+            margin-bottom: 15px;
+        }
+
+        .footer-column h3 {
+            color: #D4AF37; /* Gold */
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 2px;
+            background-color: #D4AF37;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #D4AF37;
+        }
+
+        .footer-column .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-column .contact-info i {
+            margin-right: 10px;
+            color: #D4AF37;
+            font-size: 1.1em;
+            width: 20px; /* Fixed width for icon to align text */
+            text-align: center;
+            padding-top: 3px; /* Align icon better with text */
+        }
+
+        .footer-bottom {
+            background-color: #5a1d17; /* Slightly darker red for bottom bar */
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .footer-bottom .language-selector select {
+            background-color: #6e231d;
+            color: #fff;
+            border: 1px solid #D4AF37;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive Navbar & Floating Button */
+        .nav-bar .mobile-only-donate {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .header-top {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+            .header-info-bar .container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                text-align: center;
+            }
+            .header-info-bar span {
+                text-align: center;
+            }
+            .nav-bar {
+                width: 100%;
+                order: 3;
+                display: none;
+                flex-direction: column;
+                background-color: #fff;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding-bottom: 20px;
+            }
+            .nav-bar.active {
+                display: flex;
+            }
+            .nav-bar ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
+            .nav-bar ul li {
+                margin: 0;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            .nav-bar ul li:last-child {
+                border-bottom: none;
+            }
+            .nav-bar ul li a {
+                display: block;
+                padding: 15px 0;
+            }
+            .nav-bar ul li a::after {
+                display: none;
+            }
+            .hamburger-menu {
+                display: block;
+            }
+            .nav-icons {
+                margin-left: auto;
+            }
+            .nav-icons .donate-button {
+                display: none;
+            }
+            .nav-bar .mobile-only-donate {
+                display: block;
+                margin-top: 20px;
+            }
+            .nav-bar ul li.mobile-only-donate a {
+                background-color: #D4AF37;
+                color: #6e231d;
+                padding: 10px 20px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+                display: inline-block;
+                border: none;
+            }
+            .nav-bar ul li.mobile-only-donate a:hover {
+                background-color: #c09f2d;
+            }
+            .floating-donate-btn {
+                bottom: 20px;
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                padding: 12px 20px;
+                font-size: 1em;
+                animation: pulseBorder 1.5s infinite ease-in-out;
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            }
+            .floating-donate-btn:hover {
+                transform: translateX(-50%) translateY(-3px);
+            }
+
+            /* Responsive adjustments for Privacy Policy content */
+            .privacy-hero .hero-content h1 {
+                font-size: 2.5em;
+            }
+            .privacy-content-section {
+                padding: 30px 0;
+                margin-top: -30px; /* Adjust overlap for mobile */
+                margin-bottom: 20px;
+            }
+            .privacy-content-section h1 {
+                font-size: 2em;
+                margin-bottom: 30px;
+                border-bottom: 2px solid #D4AF37;
+            }
+            .privacy-content-section h3 {
+                font-size: 1.5em;
+                margin-top: 30px;
+            }
+            .privacy-content-section p,
+            .privacy-content-section ul li {
+                font-size: 1em;
+            }
+            .privacy-content-section ul {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo img {
+                height: 60px;
+            }
+            .header-info-bar .container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                text-align: center;
+            }
+            .header-info-bar span {
+                text-align: center;
+            }
+            /* Responsive Footer */
             .footer .container {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                gap: 20px;
             }
             .footer-column {
                 min-width: unset;
                 width: 100%;
-                margin-bottom: 30px;
+                margin-bottom: 15px;
             }
-            .footer-column h3 {
-                text-align: center;
+            .footer-column h3::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
             .footer-column ul {
-                display: inline-block; /* For better centering of list items */
-                text-align: left; /* Align text within list items */
+                display: inline-block;
+                text-align: left;
             }
             .footer-column .contact-info p {
-                justify-content: center; /* Center contact info */
+                justify-content: center;
             }
             .footer-bottom {
                 flex-direction: column;
+                padding: 10px 0;
             }
             .footer-bottom p, .footer-bottom .language-selector {
                 margin-bottom: 10px;
             }
         }
+
+        /* Keyframes for the blinking animation */
+        @keyframes pulseBorder {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+        
     </style>
 </head>
 <body>
-    
+    <div class="main-fixed-header">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shri Panjarpol Gau-Raksha Sanstha Logo">
+                </a>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="why-gauseva.html">Why Gouseva?</a></li>
+                    <li><a href="benefits-gauseva.html">Benefits of Gauseva</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li class="mobile-only-donate"><a href="donate.html" class="donate-button-mobile">Donate</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="donate.html" class="donate-button">Donate</a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
 
-        <section class="privacy-content-section container">
+        <div class="header-info-bar">
+            <div class="container">
+                <span>Estd. 1908</span>
+                <span>80G Reg No. AADTP5866CF2023101</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="privacy-hero">
+        <div class="hero-content">
             <h1>Privacy Policy</h1>
-            <p><strong>Effective Date: July 4, 2025</strong></p>
+        </div>
+    </section>
 
-            <p>At **PANJARPOLE GORAKSHAN SANSTHA PANVEL**, we are deeply committed to the welfare of cows and the trust of our supporters. This Privacy Policy outlines how we collect, use, and protect any information you provide to us through our website. We believe in transparency and assure you that your privacy is of utmost importance to us.</p>
+    <section class="privacy-content-section container">
+       
+        <p><strong>Effective Date: July 4, 2025</strong></p>
 
-            ---
+        <p>At **PANJARPOLE GORAKSHAN SANSTHA PANVEL**, we are deeply committed to the welfare of cows and the trust of our supporters. This Privacy Policy outlines how we collect, use, and protect any information you provide to us through our website. We believe in transparency and assure you that your privacy is of utmost importance to us.</p>
 
-            <h3>1. Information We Collect</h3>
-            <p>We only collect information that is necessary for us to operate our Gaushala, manage donations, and communicate with our supporters. The types of information we may collect include:</p>
-            <ul>
-                <li><strong>Personal Identification Information:</strong> This may include your name, email address, postal address, and phone number, primarily collected when you make a donation, sign up for our newsletter, or contact us through our forms.</li>
-                <li><strong>Donation Information:</strong> When you make a donation, we collect details related to your transaction, such as the amount donated and the date. <strong>Please note that we do NOT store your credit card or sensitive financial information directly on our servers.</strong> All payment processing is handled by secure, third-party payment gateways (e.g., Razorpay, Stripe, etc.) that are compliant with industry standards like PCI DSS.</li>
-                <li><strong>Usage Data:</strong> We may collect non-personally identifiable information about how you interact with our website. This includes your IP address, browser type, operating system, referring pages, pages visited, and the date and time of your visit. This data is collected through standard web server logs and analytics tools (like Google Analytics) and is used to improve our website's functionality and user experience.</li>
-            </ul>
+        <hr> <h3>1. Information We Collect</h3>
+        <p>We only collect information that is necessary for us to operate our Gaushala, manage donations, and communicate with our supporters. The types of information we may collect include:</p>
+        <ul>
+            <li><strong>Personal Identification Information:</strong> This may include your name, email address, postal address, and phone number, primarily collected when you make a donation, sign up for our newsletter, or contact us through our forms.</li>
+            <li><strong>Donation Information:</strong> When you make a donation, we collect details related to your transaction, such as the amount donated and the date. <strong>Please note that we do NOT store your credit card or sensitive financial information directly on our servers.</strong> All payment processing is handled by secure, third-party payment gateways (e.g., Razorpay, Stripe, etc.) that are compliant with industry standards like PCI DSS.</li>
+            <li><strong>Usage Data:</strong> We may collect non-personally identifiable information about how you interact with our website. This includes your IP address, browser type, operating system, referring pages, pages visited, and the date and time of your visit. This data is collected through standard web server logs and analytics tools (like Google Analytics) and is used to improve our website's functionality and user experience.</li>
+        </ul>
 
-            ---
+        <hr>
 
-            <h3>2. How We Use Your Information</h3>
-            <p>The information we collect is used solely for the following purposes:</p>
-            <ul>
-                <li>To process your donations and provide you with donation receipts and acknowledgements.</li>
-                <li>To communicate with you regarding your donations, our activities, updates on cow welfare, and important announcements (if you have opted in to receive such communications).</li>
-                <li>To improve our website, services, and outreach efforts by understanding how our visitors use our site.</li>
-                <li>To respond to your inquiries, comments, or requests.</li>
-                <li>To comply with legal obligations and regulatory requirements in India.</li>
-            </ul>
+        <h3>2. How We Use Your Information</h3>
+        <p>The information we collect is used solely for the following purposes:</p>
+        <ul>
+            <li>To process your donations and provide you with donation receipts and acknowledgements.</li>
+            <li>To communicate with you regarding your donations, our activities, updates on cow welfare, and important announcements (if you have opted in to receive such communications).</li>
+            <li>To improve our website, services, and outreach efforts by understanding how our visitors use our site.</li>
+            <li>To respond to your inquiries, comments, or requests.</li>
+            <li>To comply with legal obligations and regulatory requirements in India.</li>
+        </ul>
 
-            ---
+        <hr>
 
-            <h3>3. Data Security: Your Information is Safe with Us</h3>
-            <p>We understand the importance of protecting your personal and donation information. We employ a comprehensive set of security measures to safeguard the data we collect, ensuring it is stored safely and protected against unauthorized access, disclosure, alteration, or destruction. These measures include:</p>
-            <ul>
-                <li><strong>Encryption:</strong> All data transmitted between your browser and our website is encrypted using Secure Socket Layer (SSL) technology.</li>
-                <li><strong>Secure Servers:</strong> Our website and data are hosted on secure servers with robust firewall protection and regular security updates.</li>
-                <li><strong>Access Control:</strong> Access to your personal information is strictly limited to authorized personnel who require it to perform their duties (e.g., processing donations, sending communications).</li>
-                <li><strong>Regular Security Audits:</strong> We conduct periodic security assessments and vulnerability scans to identify and address potential weaknesses in our systems.</li>
-                <li><strong>Data Minimization:</strong> We only collect information that is absolutely necessary for our stated purposes.</li>
-                <li><strong>Employee Training:</strong> Our staff is regularly trained on data privacy and security best practices to ensure they handle your information responsibly.</li>
-            </ul>
-            <p>While we strive to use commercially acceptable means to protect your Personal Data, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, we cannot guarantee its absolute security.</p>
+        <h3>3. Data Security: Your Information is Safe with Us</h3>
+        <p>We understand the importance of protecting your personal and donation information. We employ a comprehensive set of security measures to safeguard the data we collect, ensuring it is stored safely and protected against unauthorized access, disclosure, alteration, or destruction. These measures include:</p>
+        <ul>
+            <li><strong>Encryption:</strong> All data transmitted between your browser and our website is encrypted using Secure Socket Layer (SSL) technology.</li>
+            <li><strong>Secure Servers:</strong> Our website and data are hosted on secure servers with robust firewall protection and regular security updates.</li>
+            <li><strong>Access Control:</strong> Access to your personal information is strictly limited to authorized personnel who require it to perform their duties (e.g., processing donations, sending communications).</li>
+            <li><strong>Regular Security Audits:</strong> We conduct periodic security assessments and vulnerability scans to identify and address potential weaknesses in our systems.</li>
+            <li><strong>Data Minimization:</strong> We only collect information that is absolutely necessary for our stated purposes.</li>
+            <li><strong>Employee Training:</strong> Our staff is regularly trained on data privacy and security best practices to ensure they handle your information responsibly.</li>
+        </ul>
+        <p>While we strive to use commercially acceptable means to protect your Personal Data, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, we cannot guarantee its absolute security.</p>
 
-            ---
+        <hr>
 
-            <h3>4. No Sharing or Selling of Your Information</h3>
-            <p><strong>We unequivocally state that we do not sell, rent, trade, or otherwise transfer your personally identifiable information to any third parties.</strong> Your trust is paramount, and we are committed to maintaining the confidentiality of your data.</p>
-            <p>We may share non-personally identifiable, aggregated data (e.g., number of website visitors, total donations received) for analytical or reporting purposes, but this data will not identify you individually.</p>
-            <p>The only exceptions to this policy are:</p>
-            <ul>
-                <li><strong>Third-Party Service Providers:</strong> We may use reputable third-party services for essential functions such as payment processing (as mentioned above) or email communication. These providers are carefully selected and are obligated by contract to protect your information and use it only for the purposes for which we provide it.</li>
-                <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court order or government agency).</li>
-            </ul>
+        <h3>4. No Sharing or Selling of Your Information</h3>
+        <p><strong>We unequivocally state that we do not sell, rent, trade, or otherwise transfer your personally identifiable information to any third parties.</strong> Your trust is paramount, and we are committed to maintaining the confidentiality of your data.</p>
+        <p>We may share non-personally identifiable, aggregated data (e.g., number of website visitors, total donations received) for analytical or reporting purposes, but this data will not identify you individually.</p>
+        <p>The only exceptions to this policy are:</p>
+        <ul>
+            <li><strong>Third-Party Service Providers:</strong> We may use reputable third-party services for essential functions such as payment processing (as mentioned above) or email communication. These providers are carefully selected and are obligated by contract to protect your information and use it only for the purposes for which we provide it.</li>
+            <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court order or government agency).</li>
+        </ul>
 
-            ---
+        <hr>
 
-            <h3>5. Your Rights and Choices</h3>
-            <p>You have the right to:</p>
-            <ul>
-                <li><strong>Access your information:</strong> Request a copy of the personal information we hold about you.</li>
-                <li><strong>Correct your information:</strong> Request that we correct any inaccurate or incomplete personal information.</li>
-                <li><strong>Opt-out of communications:</strong> If you receive our newsletters or other communications, you can unsubscribe at any time by following the instructions provided in the email or by contacting us directly.</li>
-                <li><strong>Withdraw Consent:</strong> If we have collected and processed your personal information with your consent, you have the right to withdraw your consent at any time.</li>
-            </ul>
-            <p>To exercise any of these rights, please contact us using the details provided below.</p>
+        <h3>5. Your Rights and Choices</h3>
+        <p>You have the right to:</p>
+        <ul>
+            <li><strong>Access your information:</strong> Request a copy of the personal information we hold about you.</li>
+            <li><strong>Correct your information:</strong> Request that we correct any inaccurate or incomplete personal information.</li>
+            <li><strong>Opt-out of communications:</strong> If you receive our newsletters or other communications, you can unsubscribe at any time by following the instructions provided in the email or by contacting us directly.</li>
+            <li><strong>Withdraw Consent:</strong> If we have collected and processed your personal information with your consent, you have the right to withdraw your consent at any time.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us using the details provided below.</p>
 
-            ---
+        <hr>
 
-            <h3>6. Children's Privacy</h3>
-            <p>Our website is not intended for individuals under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to delete that information promptly.</p>
+        <h3>6. Children's Privacy</h3>
+        <p>Our website is not intended for individuals under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to delete that information promptly.</p>
 
-            ---
+        <hr>
 
-           
+        <h3>7. Changes to This Privacy Policy</h3>
+        <p>We may update our Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top. We encourage you to review this Privacy Policy periodically.</p>
 
-            <h3>7. Changes to This Privacy Policy</h3>
-            <p>We may update our Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top. We encourage you to review this Privacy Policy periodically.</p>
+        <hr>
 
-            ---
+        <h3>8. Contact Us</h3>
+        <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
+        <p><strong>PANJARPOLE GORAKSHAN SANSTHA PANVEL</strong><br>
+        panvelgoshala@gmail.com<br>
+        +91 9820559538</p>
+        <p>Thank you for your trust and support in our mission to care for our beloved cows.</p>
+    </section>
 
-            <h3>8. Contact Us</h3>
-            <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
-            <p><strong>PANJARPOLE GORAKSHAN SANSTHA PANVEL</strong><br>
-            
-           panvelgoshala@gmail.com<br>
-            +91 9820559538</p>
-            <p>Thank you for your trust and support in our mission to care for our beloved cows.</p>
-        </section>
-    </main>
+    <a href="donate.html" class="floating-donate-btn">Donate Now</a>
 
     <footer class="footer">
         <div class="container">
@@ -263,23 +698,26 @@
                     </a>
                 </div>
             </div>
+
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About us</a></li>
-                    <li><a href="why-gauseva.html">Why Gauseva?</a></li>
+                    <li><a href="why-gauseva.html">Why Gouseva?</a></li>
                     <li><a href="benefits-gauseva.html">Benefits of Gauseva</a></li>
                     <li><a href="contact.html">Contact us</a></li>
-                    <li><a href="#">Donate</a></li>
+                    <li><a href="donate.html">Donate</a></li>
                 </ul>
             </div>
+
             <div class="footer-column">
                 <h3>Legal Pages</h3>
                 <ul>
-                    <li><a href="pp.html">Privacy Policy</a></li>
+                    <li><a href="pp.html" class="active">Privacy Policy</a></li>
                 </ul>
             </div>
+
             <div class="footer-column">
                 <h3>Contact Information</h3>
                 <div class="contact-info">
@@ -289,10 +727,58 @@
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>Copyright © 2025 Goraksha Panvel </p>
-             
+            <p>Copyright © 2025 Goraksha Panvel</p>
+            <div class="language-selector">
+                <select>
+                    <option value="en">English</option>
+                </select>
+            </div>
         </div>
     </footer>
+
+    <div id="copy-notification">Copied to clipboard!</div>
+
+    <script>
+        // Copy to clipboard function (if used for account details on this page)
+        function copyToClipboard(id) {
+            const text = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.getElementById("copy-notification");
+                notification.classList.add("show");
+                setTimeout(() => notification.classList.remove("show"), 2000);
+            });
+        }
+
+        // Navbar active state and hamburger menu toggle (from your main script)
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.nav-bar a');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const hamburgerIcon = document.querySelector('.hamburger-menu .fas');
+        const navBar = document.querySelector('.nav-bar');
+
+        // Highlight active page
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
+                link.classList.add('active');
+            }
+        });
+
+        // Hamburger menu toggle
+        hamburgerMenu.addEventListener('click', () => {
+            navBar.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+
+            if (hamburgerMenu.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-times');
+            } else {
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars');
+            }
+        });
+    </script>
 </body>
 </html>

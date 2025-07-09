@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our CSR Initiatives - Shri Panjarpol Gau-Raksha Sanstha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css"> <style>
+        /* Add specific CSS for this page here, or link it externally */
+
+        /* Styles for PDF Preview Section */
+        .pdf-preview-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+            min-height: 70vh; /* Ensure some height for content */
+        }
+
+        .pdf-preview-section h2 {
+            font-size: 2.8em;
+            color: #6e231d;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .pdf-preview-section .section-intro-text {
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for previews */
+            gap: 30px;
+            padding: 0 15px; /* Padding for grid items */
+        }
+
+        .pdf-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Important for iframes */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-item h3 {
+            font-size: 1.4em;
+            color: #6e231d;
+            padding: 15px;
+            margin: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pdf-item .pdf-embed {
+            width: 100%;
+            height: 400px; /* Adjust height as needed for preview */
+            border: none; /* Remove iframe border */
+            display: block;
+        }
+
+        .pdf-item .pdf-download-link {
+            display: block;
+            background-color: #D4AF37;
+            color: #6e231d;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .pdf-item .pdf-download-link:hover {
+            background-color: #c09f2d;
+        }
+
+        /* Adjustments for fixed header space */
+        body {
+            padding-top: 130px; /* Adjust to match your fixed header height */
+        }
+
+        /* Specific CSS for the Footer and Navbar as provided in your snippet */
+        /* Make sure these styles are also in your style.css or a shared CSS block */
+        .main-fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 15px;
+            width: 100%;
+        }
+
+        .logo img {
+            height: 70px;
+            display: block;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-bar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1.05em;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-bar ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-bar ul li a:hover::after,
+        .nav-bar ul li a.active::after {
+            width: 100%;
+        }
+
+        .nav-bar ul li a:hover {
+            color: #6e231d;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-icons .donate-button {
+            background-color: #D4AF37;
+            color: #6e231d;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-icons .donate-button:hover {
+            background-color: #c09f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hamburger-menu {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: #6e231d;
+            width: 28px;
+            text-align: center;
+        }
+
+        .header-info-bar {
+            background-color: #6e231d;
+            color: #ffffff;
+            padding: 10px 0;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+        }
+
+        .header-info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        /* Floating Donate Button Styling */
+        .floating-donate-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #D4AF37;
+            color: #6e231d;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            animation: none; /* Desktop default, overridden by media query for mobile */
+        }
+
+        .floating-donate-btn:hover {
+            background-color: #c09f2d;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #6e231d; /* Dark Red */
+            color: #fff;
+            padding: 50px 0 20px 0;
+            font-size: 0.95em;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px; /* Space between columns */
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px; /* Minimum width for columns before wrapping */
+            margin-bottom: 20px;
+        }
+
+        .footer-column .logo img {
+            height: 100px; /* Adjust logo size */
+            margin-bottom: 15px;
+        }
+
+        .footer-column h3 {
+            color: #D4AF37; /* Gold */
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 2px;
+            background-color: #D4AF37;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #D4AF37;
+        }
+
+        .footer-column .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-column .contact-info i {
+            margin-right: 10px;
+            color: #D4AF37;
+            font-size: 1.1em;
+            width: 20px; /* Fixed width for icon to align text */
+            text-align: center;
+            padding-top: 3px; /* Align icon better with text */
+        }
+
+        .footer-bottom {
+            background-color: #5a1d17; /* Slightly darker red for bottom bar */
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .footer-bottom .language-selector select {
+            background-color: #6e231d;
+            color: #fff;
+            border: 1px solid #D4AF37;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 768px) {
+            .footer .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            .footer-column {
+                min-width: unset;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .footer-column h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .footer-column .contact-info p {
+                justify-content: center;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+        }
+        /* Mobile specific hamburger/nav */
+        .nav-bar .mobile-only-donate {
+            display: none; /* Hidden by default, shown only in mobile nav */
+        }
+
+        @media (max-width: 992px) {
+            /* Header Top section adjustments */
+            .header-top {
+                flex-wrap: wrap;
+                padding: 10px; /* Reduce horizontal padding */
+            }
+
+            /* Info bar centering on mobile */
+            .header-info-bar .container {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center;   /* Center horizontally when stacked */
+                justify-content: center; /* Center vertically if container has height */
+                gap: 5px;              /* Reduce gap for stacked items */
+                text-align: center;    /* Ensure text within spans is centered */
+            }
+            .header-info-bar span {
+                text-align: center; /* Ensure individual spans are centered */
+            }
+
+            /* Navigation bar mobile specific styles */
+            .nav-bar {
+                width: 100%;
+                order: 3; /* Pushes nav below logo/icons on wrap */
+                display: none; /* Hidden by default when collapsed */
+                flex-direction: column;
+                background-color: #fff;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                position: absolute; /* Positioned relative to .main-fixed-header */
+                top: 100%; /* Position it right below the combined header content */
+                left: 0;
+                right: 0;
+                padding-bottom: 20px;
+            }
+
+            .nav-bar.active {
+                display: flex; /* Show nav when active */
+            }
+
+            .nav-bar ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 0; /* Remove gap for vertical list */
+            }
+
+            .nav-bar ul li {
+                margin: 0;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-bar ul li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-bar ul li a {
+                display: block;
+                padding: 15px 0;
+            }
+            .nav-bar ul li a::after {
+                display: none; /* Hide underline on mobile */
+            }
+
+            /* Hamburger menu display for mobile */
+            .hamburger-menu {
+                display: block;
+            }
+            .nav-icons {
+                margin-left: auto; /* Pushes icons (and hamburger) to the right */
+            }
+
+            /* Donate button visibility on mobile */
+            .nav-icons .donate-button {
+                display: none; /* Hide desktop donate button on mobile */
+            }
+
+            .nav-bar .mobile-only-donate {
+                display: block; /* Show mobile specific donate button in the expanded menu */
+                margin-top: 20px; /* Space above mobile button */
+            }
+
+            .nav-bar ul li.mobile-only-donate a {
+                background-color: #D4AF37; /* Gold */
+                color: #6e231d; /* Dark red */
+                padding: 10px 20px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+                display: inline-block; /* Allows padding and alignment */
+                border: none; /* Ensure no extra border */
+            }
+
+            .nav-bar ul li.mobile-only-donate a:hover {
+                background-color: #c09f2d;
+            }
+
+            /* Floating button position and blinking animation for mobile */
+            .floating-donate-btn {
+                bottom: 20px;
+                left: 50%; /* Move to the horizontal center */
+                right: auto; /* Override right positioning */
+                transform: translateX(-50%); /* Adjust by half its width to truly center */
+                padding: 12px 20px; /* Slightly smaller button on mobile */
+                font-size: 1em;
+                animation: pulseBorder 1.5s infinite ease-in-out; /* Apply blinking animation */
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); /* Initial shadow for animation */
+            }
+
+            .floating-donate-btn:hover {
+                transform: translateX(-50%) translateY(-3px); /* Keep centered, add hover lift */
+            }
+        }
+
+        @media (max-width: 600px) {
+            /* Further adjustments for very small screens if needed */
+            .logo img {
+                height: 60px; /* Smaller logo on very small screens */
+            }
+            /* Ensure info bar remains centered */
+            .header-info-bar .container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                text-align: center;
+            }
+            .header-info-bar span {
+                text-align: center;
+            }
+            .pdf-grid {
+                grid-template-columns: 1fr; /* Stack PDFs on very small screens */
+            }
+        }
+
+        /* Keyframes for the blinking animation */
+        @keyframes pulseBorder {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); /* Gold with opacity */
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); /* Expand and fade out */
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); /* Return to start */
+            }
+        }
+
+        /* Copy notification style */
+        #copy-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 2000;
+        }
+
+        #copy-notification.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-fixed-header">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shri Panjarpol Gau-Raksha Sanstha Logo">
+                </a>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="why-gauseva.html">Why Gouseva?</a></li>
+                    <li><a href="benefits-gauseva.html">Benefits of Gauseva</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li class="mobile-only-donate"><a href="donate.html" class="donate-button-mobile">Donate</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="donate.html" class="donate-button">Donate</a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-info-bar">
+            <div class="container">
+                <span>Estd. 1908</span>
+                <span>80G Reg No. AADTP5866CF2023101</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="pdf-preview-section">
+        <div class="container">
+            <h2>Our CSR Impact Reports & Documents</h2>
+            <p class="section-intro-text">Explore our detailed reports and documents showcasing our commitment to community welfare, environmental sustainability, and ethical cow protection.</p>
+
+            <div class="pdf-grid">
+                <div class="pdf-item">
+                    <h3>Development of 170 Acre Farmland </h3>
+                    <iframe src="pdfs/csr_report_2024.pdf" class="pdf-embed" title="Annual CSR Report 2024"></iframe>
+                    <a href="pdfs/csr_report_2024.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="pdf-item">
+                    <h3>Gaushala Project Plan</h3>
+                    <iframe src="pdfs/SHEET_1_PLOT_LAYOUT_MALDUNGE_GAUNSHALA.pdf" class="pdf-embed" title="Gaushala Project Plan"></iframe>
+                    <a href="pdfs/SHEET_1_PLOT_LAYOUT_MALDUNGE_GAUNSHALA.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="pdf-item">
+                    <h3>Community Outreach Summary</h3>
+                    <iframe src="pdfs/sheet2.pdf" class="pdf-embed" title="Community Outreach Summary"></iframe>
+                    <a href="pdfs/sheet2.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="pdf-item">
+                    <h3>Environmental Initiatives Overview</h3>
+                    <iframe src="pdfs/sheet3.pdf." class="pdf-embed" title="Environmental Initiatives Overview"></iframe>
+                    <a href="pdfs/sheet3.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="pdf-item">
+                    <h3>Volunteer Program Guidelines</h3>
+                    <iframe src="pdfs/sheet4.pdf" class="pdf-embed" title="Volunteer Program Guidelines"></iframe>
+                    <a href="pdfs/sheet4.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <a href="donate.html" class="floating-donate-btn">Donate Now</a>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-column">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Goraksha Panvel Logo" style="height: 100px;">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="why-gauseva.html">Why Gouseva?</a></li>
+                    <li><a href="benefits-gauseva.html">Benefits of Gauseva</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal Pages</h3>
+                <ul>
+                    <li><a href="pp.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> +91 9820559538</p>
+                    <p><i class="fas fa-envelope"></i> panvelgoshala@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Panvel, Raigarh, Maharashtra, India</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Goraksha Panvel</p>
+            <div class="language-selector">
+                <select>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <div id="copy-notification">Copied to clipboard!</div>
+
+    <script>
+        // Copy to clipboard function (if used for account details on this page)
+        function copyToClipboard(id) {
+            const text = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.getElementById("copy-notification");
+                notification.classList.add("show");
+                setTimeout(() => notification.classList.remove("show"), 2000);
+            });
+        }
+
+        // Navbar active state and hamburger menu toggle (from your main script)
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll('.nav-bar a');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const hamburgerIcon = document.querySelector('.hamburger-menu .fas');
+        const navBar = document.querySelector('.nav-bar');
+
+        // Highlight active page
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
+                link.classList.add('active');
+            }
+        });
+
+        // Hamburger menu toggle
+        hamburgerMenu.addEventListener('click', () => {
+            navBar.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+
+            if (hamburgerMenu.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-times');
+            } else {
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>

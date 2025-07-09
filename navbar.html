@@ -4,12 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shri Panjarpol Gau-Raksha Sanstha</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        
+     /* General Body and HTML Reset */
+/* General Body and HTML Reset */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Ensure Roboto is imported or linked in HTML */
+    background-color: #f5f7fa; /* Light background for the page */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Adjust padding-top for the combined height of the fixed header (main-header + info-bar) */
+/* IMPORTANT: This value needs to be carefully adjusted to the total height of your fixed header */
+/* Measure the actual height of .main-fixed-header in your browser's dev tools and set this value. */
+body {
+    padding-top: 130px; /* Example: adjust if your header's actual height changes */
+}
+
+/* Main Fixed Header Container */
+.main-fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the entire header stays on top */
+    background-color: #fff; /* Default background for the whole fixed header block */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Top part of the header (Logo, Nav, Donate, Hamburger) */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 15px; /* Padding for the top section */
+    width: 100%;
+}
+
+.logo img {
+    height: 70px; /* Adjust logo height as needed */
+    display: block;
+}
+
 .nav-bar ul {
     list-style: none;
     margin: 0;
@@ -75,34 +124,97 @@
     font-size: 1.8em;
     cursor: pointer;
     color: #6e231d;
+    width: 28px; /* Ensure a consistent width for smooth transition */
+    text-align: center;
 }
 
-/* Responsive Adjustments for Navbar */
+/* Info Bar Styling - This is now part of the fixed header */
+.header-info-bar {
+    background-color: #6e231d; /* Dark red */
+    color: #ffffff;
+    padding: 10px 0; /* Padding for the info bar */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+.header-info-bar .container {
+    display: flex;
+    justify-content: space-between; /* Pushes items to left and right */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+/* Floating Donate Button Styling (Desktop) */
+.floating-donate-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #D4AF37;
+    color: #6e231d;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for floating effect */
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    
+   
+    animation: pulseBorder 1.5s infinite ease-in-out;/
+}
+
+.floating-donate-btn:hover {
+    background-color: #c09f2d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Responsive Adjustments */
 .nav-bar .mobile-only-donate {
-    display: none;
+    display: none; /* Hidden by default, shown only in mobile nav */
 }
 
 @media (max-width: 992px) {
-    .header .container {
+    /* Header Top section adjustments */
+    .header-top {
         flex-wrap: wrap;
+        padding: 10px; /* Reduce horizontal padding */
     }
 
+    /* Info bar centering on mobile */
+    .header-info-bar .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;   /* Center horizontally when stacked */
+        justify-content: center; /* Center vertically if container has height */
+        gap: 5px;              /* Reduce gap for stacked items */
+        text-align: center;    /* Ensure text within spans is centered */
+    }
+    .header-info-bar span {
+        text-align: center; /* Ensure individual spans are centered */
+    }
+
+    /* Navigation bar mobile specific styles */
     .nav-bar {
         width: 100%;
-        order: 3;
-        display: none;
+        order: 3; /* Pushes nav below logo/icons on wrap */
+        display: none; /* Hidden by default when collapsed */
         flex-direction: column;
         background-color: #fff;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        top: 100%;
+        position: absolute; /* Positioned relative to .main-fixed-header */
+        top: 100%; /* Position it right below the combined header content */
         left: 0;
         right: 0;
         padding-bottom: 20px;
     }
 
     .nav-bar.active {
-        display: flex;
+        display: flex; /* Show nav when active */
     }
 
     .nav-bar ul {
@@ -128,19 +240,22 @@
     .nav-bar ul li a::after {
         display: none; /* Hide underline on mobile */
     }
+
+    /* Hamburger menu display for mobile */
     .hamburger-menu {
         display: block;
     }
     .nav-icons {
-        margin-left: auto;
+        margin-left: auto; /* Pushes icons (and hamburger) to the right */
     }
 
+    /* Donate button visibility on mobile */
     .nav-icons .donate-button {
-        display: none;
+        display: none; /* Hide desktop donate button on mobile */
     }
 
     .nav-bar .mobile-only-donate {
-        display: block;
+        display: block; /* Show mobile specific donate button in the expanded menu */
         margin-top: 20px; /* Space above mobile button */
     }
 
@@ -152,90 +267,67 @@
         text-decoration: none;
         font-weight: bold;
         transition: background-color 0.3s ease;
-        display: inline-block;
+        display: inline-block; /* Allows padding and alignment */
         border: none; /* Ensure no extra border */
     }
 
     .nav-bar ul li.mobile-only-donate a:hover {
         background-color: #c09f2d;
     }
-}
-.top-bar {
-    background-color: #6e231d; 
-    border-bottom: 1px solid #ddd;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
-    padding: 8px 0;
+
+    /* Floating button position and blinking animation for mobile */
+    .floating-donate-btn {
+        bottom: 20px;
+        left: 50%; /* Move to the horizontal center */
+        right: auto; /* Override right positioning */
+        transform: translateX(-50%); /* Adjust by half its width to truly center */
+        padding: 12px 20px; /* Slightly smaller button on mobile */
+        font-size: 1em;
+        animation: pulseBorder 1.5s infinite ease-in-out; /* Apply blinking animation */
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); /* Initial shadow for animation */
+    }
+
+    .floating-donate-btn:hover {
+        transform: translateX(-50%) translateY(-3px); /* Keep centered, add hover lift */
+    }
 }
 
-.top-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.top-bar-info span {
-    margin-right: 20px;
-    color: #ffffff;
-    font-weight: 500;
-}
-
-.top-bar-social a {
-    margin-left: 15px;
-    color: #ffffff;
-    transition: color 0.3s ease;
-    font-size: 16px;
-}
-
-.top-bar-social a:hover {
-    color: #d35400; /* Highlight color on hover */
-}
 @media (max-width: 600px) {
-    .top-bar .container {
+    /* Further adjustments for very small screens if needed */
+    .logo img {
+        height: 60px; /* Smaller logo on very small screens */
+    }
+    /* Ensure info bar remains centered */
+    .header-info-bar .container {
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
+        gap: 5px;
+        text-align: center;
     }
-
-    .top-bar-info span {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 4px;
-    }
-
-    .top-bar-social {
-        align-self: flex-end;
+    .header-info-bar span {
+        text-align: center;
     }
 }
 
+/* Keyframes for the blinking animation */
+@keyframes pulseBorder {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); /* Gold with opacity */
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); /* Expand and fade out */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); /* Return to start */
+    }
+}
     </style>
 </head>
 
 <body>
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-info">
-                <span>Estd. 1908</span>
-                <!-- <span>Redg No: E-35-[K]/1953</span> -->
-                <span>80G Reg No. AADTP5866CF2023101</span>
-            </div>
-            <div class="top-bar-social">
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <header class="header">
-        <div class="container">
+    <div class="main-fixed-header">
+        <div class="header-top">
             <div class="logo">
                 <a href="index.html">
                     <img src="images/logo.png" alt="Shri Panjarpol Gau-Raksha Sanstha Logo">
@@ -258,19 +350,43 @@
                 </div>
             </div>
         </div>
-    </header>
 
-    <!-- Add your page content below -->
+        <div class="header-info-bar">
+            <div class="container">
+                <span>Estd. 1908</span>
+                <span>80G Reg No. AADTP5866CF2023101</span>
+            </div>
+        </div>
+    </div>
 
-    <!-- Script to highlight active page -->
+    <a href="donate.html" class="floating-donate-btn">Donate Now</a>
+
     <script>
         const currentPage = window.location.pathname.split("/").pop();
         const navLinks = document.querySelectorAll('.nav-bar a');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const hamburgerIcon = document.querySelector('.hamburger-menu .fas');
+        const navBar = document.querySelector('.nav-bar');
 
+        // Highlight active page
         navLinks.forEach(link => {
             const linkPage = link.getAttribute('href');
             if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
-                link.parentElement.classList.add('active');
+                link.classList.add('active');
+            }
+        });
+
+        // Hamburger menu toggle
+        hamburgerMenu.addEventListener('click', () => {
+            navBar.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+
+            if (hamburgerMenu.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-times');
+            } else {
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars');
             }
         });
     </script>
