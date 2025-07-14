@@ -5,525 +5,578 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our CSR Initiatives - Shri Panjarpol Gau-Raksha Sanstha</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css"> <style>
-        /* Add specific CSS for this page here, or link it externally */
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    /* General Body and Layout Adjustments */
+    body {
+        padding-top: 130px; /* Adjust to match your fixed header height */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
+        color: #333;
+    }
 
-        /* Styles for PDF Preview Section */
-        .pdf-preview-section {
-            padding: 80px 0;
-            background-color: #f5f7fa;
-            min-height: 70vh; /* Ensure some height for content */
-        }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
 
-        .pdf-preview-section h2 {
-            font-size: 2.8em;
-            color: #6e231d;
-            margin-bottom: 25px;
-            text-align: center;
-        }
+    /* Header Styles (from your existing code, moved here for completeness) */
+    .main-fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        .pdf-preview-section .section-intro-text {
-            max-width: 900px;
-            margin: 0 auto 60px auto;
-            font-size: 1.2em;
-            color: #555;
-            line-height: 1.8;
-            text-align: center;
-        }
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 15px;
+        width: 100%;
+    }
 
-        .pdf-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for previews */
-            gap: 30px;
-            padding: 0 15px; /* Padding for grid items */
-        }
+    .logo img {
+        height: 70px;
+        display: block;
+    }
 
-        .pdf-item {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Important for iframes */
-            display: flex;
-            flex-direction: column;
-        }
+    .nav-bar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+    }
 
-        .pdf-item h3 {
-            font-size: 1.4em;
-            color: #6e231d;
-            padding: 15px;
-            margin: 0;
-            text-align: center;
-            background-color: #f9f9f9;
-            border-bottom: 1px solid #eee;
-        }
+    .nav-bar ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 1.05em;
+        padding: 5px 0;
+        position: relative;
+        transition: color 0.3s ease;
+    }
 
-        .pdf-item .pdf-embed {
-            width: 100%;
-            height: 400px; /* Adjust height as needed for preview */
-            border: none; /* Remove iframe border */
-            display: block;
-        }
+    .nav-bar ul li a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #D4AF37;
+        transition: width 0.3s ease;
+    }
 
-        .pdf-item .pdf-download-link {
-            display: block;
-            background-color: #D4AF37;
-            color: #6e231d;
-            padding: 10px 15px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+    .nav-bar ul li a:hover::after,
+    .nav-bar ul li a.active::after {
+        width: 100%;
+    }
 
-        .pdf-item .pdf-download-link:hover {
-            background-color: #c09f2d;
-        }
+    .nav-bar ul li a:hover {
+        color: #6e231d;
+    }
 
-        /* Adjustments for fixed header space */
-        body {
-            padding-top: 130px; /* Adjust to match your fixed header height */
-        }
+    .nav-icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-        /* Specific CSS for the Footer and Navbar as provided in your snippet */
-        /* Make sure these styles are also in your style.css or a shared CSS block */
-        .main-fixed-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .nav-icons .donate-button {
+        background-color: #D4AF37;
+        color: #6e231d;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
 
+    .nav-icons .donate-button:hover {
+        background-color: #c09f2d;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .hamburger-menu {
+        display: none;
+        font-size: 1.8em;
+        cursor: pointer;
+        color: #6e231d;
+        width: 28px;
+        text-align: center;
+    }
+
+    .header-info-bar {
+        background-color: #6e231d;
+        color: #ffffff;
+        padding: 10px 0;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 14px;
+    }
+
+    .header-info-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    /* Floating Donate Button Styling */
+    .floating-donate-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #D4AF37;
+        color: #6e231d;
+        padding: 15px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        animation: none; /* Desktop default, overridden by media query for mobile */
+    }
+
+    .floating-donate-btn:hover {
+        background-color: #c09f2d;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+   
+
+    /* --- PDF Preview Section Specific Styles --- */
+    .pdf-preview-section {
+        padding: 80px 0;
+        background-color: #f5f7fa;
+        min-height: 70vh;
+    }
+
+    .pdf-preview-section h2 {
+        font-size: 2.8em;
+        color: #6e231d;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .pdf-preview-section .section-intro-text {
+        max-width: 900px;
+        margin: 0 auto 60px auto;
+        font-size: 1.2em;
+        color: #555;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    /* Modified: Layout for main PDF items (vertical stack) */
+    .pdf-grid {
+        display: flex;
+        flex-direction: column; /* Stack main pdf-items vertically */
+        gap: 30px; /* Space between the main pdf-item cards */
+        padding: 0 15px; /* Ensure padding on sides */
+        max-width: 800px; /* Constrain width of the column of cards */
+        margin: 0 auto; /* Center the column of cards */
+    }
+
+    /* PDF Card Styling */
+    .pdf-item {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e0e0e0;
+    }
+
+    /* PDF Heading */
+    .pdf-item h3 {
+        font-size: 1.5em;
+        color: #6e231d;
+        padding: 20px 15px;
+        margin: 0;
+        text-align: center;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #eee;
+        font-weight: 600;
+    }
+
+    /* Optional Descriptive Text Block */
+    .project-description {
+        padding: 15px 25px;
+        font-size: 1.05em;
+        color: #444;
+        line-height: 1.7;
+        border-bottom: 1px solid #eee;
+        background-color: #fcfcfc;
+    }
+    .project-description strong {
+        color: #6e231d;
+    }
+
+    /* Container for grouped Gaushala PDFs */
+    /* --- MODIFIED FOR SIDE-BY-SIDE ON LARGER SCREENS --- */
+    .gaushala-pdfs {
+        display: flex;
+        flex-direction: row; /* Arranges children horizontally */
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: center; /* Center items if they don't fill the row */
+        gap: 25px; /* Space between individual PDF items */
+        padding: 20px; /* Padding around the entire group */
+        flex-grow: 1; /* Allows this container to expand */
+        overflow-y: auto; /* Adds scrollbar if content exceeds height (for fixed height scenarios) */
+        max-height: 1000px; /* Max height for the scrollable area, desktop default */
+        align-items: stretch; /* Ensures items in a row have equal height */
+    }
+
+    /* Styling for individual PDF within the grouped section */
+    .pdf-sub-item {
+        background-color: #fff;
+        border: 1px solid #e9e9e9;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex-basis: calc(50% - 15px); /* Two columns with gap for larger screens */
+        max-width: calc(50% - 15px); /* Max width for two columns */
+        /* If you want three columns, change to calc(33.33% - 17px) */
+    }
+
+    /* Embedded PDF */
+    .pdf-embed {
+        width: 100%;
+        height: 300px; /* Default height for iframes */
+        border: none;
+        display: block;
+        flex-shrink: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Download Link */
+    .pdf-download-link {
+        display: block;
+        background-color: #D4AF37;
+        color: #6e231d;
+        padding: 12px 15px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin-top: auto;
+        font-size: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pdf-download-link i {
+        margin-left: 8px;
+    }
+
+    .pdf-download-link:hover {
+        background-color: #c09f2d;
+        color: #fff;
+    }
+
+    /* --- Responsive Styles --- */
+    @media (max-width: 992px) {
+        /* Header Top section adjustments */
         .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 15px;
-            width: 100%;
+            flex-wrap: wrap;
+            padding: 10px;
         }
 
-        .logo img {
-            height: 70px;
-            display: block;
+        /* Info bar centering on mobile */
+        .header-info-bar .container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            text-align: center;
+        }
+        .header-info-bar span {
+            text-align: center;
+        }
+
+        /* Navigation bar mobile specific styles */
+        .nav-bar {
+            width: 100%;
+            order: 3;
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            padding-bottom: 20px;
+        }
+
+        .nav-bar.active {
+            display: flex;
         }
 
         .nav-bar ul {
-            list-style: none;
+            flex-direction: column;
+            width: 100%;
+            gap: 0;
+        }
+
+        .nav-bar ul li {
             margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 30px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-bar ul li:last-child {
+            border-bottom: none;
         }
 
         .nav-bar ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            font-size: 1.05em;
-            padding: 5px 0;
-            position: relative;
-            transition: color 0.3s ease;
+            display: block;
+            padding: 15px 0;
         }
-
         .nav-bar ul li a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background-color: #D4AF37;
-            transition: width 0.3s ease;
+            display: none;
         }
 
-        .nav-bar ul li a:hover::after,
-        .nav-bar ul li a.active::after {
-            width: 100%;
+        /* Hamburger menu display for mobile */
+        .hamburger-menu {
+            display: block;
         }
-
-        .nav-bar ul li a:hover {
-            color: #6e231d;
-        }
-
         .nav-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            margin-left: auto;
         }
 
+        /* Donate button visibility on mobile */
         .nav-icons .donate-button {
+            display: none;
+        }
+
+        .nav-bar .mobile-only-donate {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .nav-bar ul li.mobile-only-donate a {
             background-color: #D4AF37;
             color: #6e231d;
             padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            border: none;
         }
 
-        .nav-icons .donate-button:hover {
+        .nav-bar ul li.mobile-only-donate a:hover {
             background-color: #c09f2d;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .hamburger-menu {
-            display: none;
-            font-size: 1.8em;
-            cursor: pointer;
-            color: #6e231d;
-            width: 28px;
-            text-align: center;
-        }
-
-        .header-info-bar {
-            background-color: #6e231d;
-            color: #ffffff;
-            padding: 10px 0;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 14px;
-        }
-
-        .header-info-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-            width: 100%;
-        }
-
-        /* Floating Donate Button Styling */
+        /* Floating button position and blinking animation for mobile */
         .floating-donate-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #D4AF37;
-            color: #6e231d;
-            padding: 15px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            animation: none; /* Desktop default, overridden by media query for mobile */
+            bottom: 20px;
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            padding: 12px 20px;
+            font-size: 1em;
+            animation: pulseBorder 1.5s infinite ease-in-out;
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
         }
 
         .floating-donate-btn:hover {
-            background-color: #c09f2d;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transform: translateX(-50%) translateY(-3px);
         }
 
-        /* Footer Styles */
-        .footer {
-            background-color: #6e231d; /* Dark Red */
-            color: #fff;
-            padding: 50px 0 20px 0;
-            font-size: 0.95em;
+        /* PDF Section adjustments for Tablet */
+        .pdf-preview-section h2 {
+            font-size: 2.2em;
         }
 
+        .pdf-preview-section .section-intro-text {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+
+        .pdf-grid {
+            gap: 25px; /* Slightly less gap between main pdf items */
+        }
+
+        .pdf-item h3 {
+            font-size: 1.3em;
+            padding: 18px 15px;
+        }
+
+        .project-description {
+            padding: 12px 20px;
+            font-size: 1em;
+        }
+
+        .gaushala-pdfs {
+            max-height: 800px; /* Adjust max-height for tablets */
+            padding: 15px; /* Reduce padding slightly */
+        }
+
+        /* For tablet, keep it two columns, but adjust width slightly */
+        .pdf-sub-item {
+            flex-basis: calc(50% - 12.5px); /* Adjusting width for tablet gap */
+            max-width: calc(50% - 12.5px);
+        }
+
+        .pdf-embed {
+            height: 280px; /* Slightly reduce iframe height for tablets */
+        }
+    }
+
+    @media (max-width: 768px) {
         .footer .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px; /* Space between columns */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
         }
-
         .footer-column {
-            flex: 1;
-            min-width: 200px; /* Minimum width for columns before wrapping */
-            margin-bottom: 20px;
-        }
-
-        .footer-column .logo img {
-            height: 100px; /* Adjust logo size */
+            min-width: unset;
+            width: 100%;
             margin-bottom: 15px;
         }
-
-        .footer-column h3 {
-            color: #D4AF37; /* Gold */
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            position: relative;
-        }
         .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 50px;
-            height: 2px;
-            background-color: #D4AF37;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column ul li a:hover {
-            color: #D4AF37;
-        }
-
-        .footer-column .contact-info p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .footer-column .contact-info i {
-            margin-right: 10px;
-            color: #D4AF37;
-            font-size: 1.1em;
-            width: 20px; /* Fixed width for icon to align text */
-            text-align: center;
-            padding-top: 3px; /* Align icon better with text */
-        }
-
-        .footer-bottom {
-            background-color: #5a1d17; /* Slightly darker red for bottom bar */
-            padding: 15px 0;
-            text-align: center;
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #ccc;
-        }
-
-        .footer-bottom .language-selector select {
-            background-color: #6e231d;
-            color: #fff;
-            border: 1px solid #D4AF37;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Responsive Footer */
-        @media (max-width: 768px) {
-            .footer .container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 20px;
-            }
-            .footer-column {
-                min-width: unset;
-                width: 100%;
-                margin-bottom: 15px;
-            }
-            .footer-column h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .footer-column .contact-info p {
-                justify-content: center;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                padding: 10px 0;
-            }
-        }
-        /* Mobile specific hamburger/nav */
-        .nav-bar .mobile-only-donate {
-            display: none; /* Hidden by default, shown only in mobile nav */
-        }
-
-        @media (max-width: 992px) {
-            /* Header Top section adjustments */
-            .header-top {
-                flex-wrap: wrap;
-                padding: 10px; /* Reduce horizontal padding */
-            }
-
-            /* Info bar centering on mobile */
-            .header-info-bar .container {
-                flex-direction: column; /* Stack items vertically */
-                align-items: center;   /* Center horizontally when stacked */
-                justify-content: center; /* Center vertically if container has height */
-                gap: 5px;              /* Reduce gap for stacked items */
-                text-align: center;    /* Ensure text within spans is centered */
-            }
-            .header-info-bar span {
-                text-align: center; /* Ensure individual spans are centered */
-            }
-
-            /* Navigation bar mobile specific styles */
-            .nav-bar {
-                width: 100%;
-                order: 3; /* Pushes nav below logo/icons on wrap */
-                display: none; /* Hidden by default when collapsed */
-                flex-direction: column;
-                background-color: #fff;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                position: absolute; /* Positioned relative to .main-fixed-header */
-                top: 100%; /* Position it right below the combined header content */
-                left: 0;
-                right: 0;
-                padding-bottom: 20px;
-            }
-
-            .nav-bar.active {
-                display: flex; /* Show nav when active */
-            }
-
-            .nav-bar ul {
-                flex-direction: column;
-                width: 100%;
-                gap: 0; /* Remove gap for vertical list */
-            }
-
-            .nav-bar ul li {
-                margin: 0;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-
-            .nav-bar ul li:last-child {
-                border-bottom: none;
-            }
-
-            .nav-bar ul li a {
-                display: block;
-                padding: 15px 0;
-            }
-            .nav-bar ul li a::after {
-                display: none; /* Hide underline on mobile */
-            }
-
-            /* Hamburger menu display for mobile */
-            .hamburger-menu {
-                display: block;
-            }
-            .nav-icons {
-                margin-left: auto; /* Pushes icons (and hamburger) to the right */
-            }
-
-            /* Donate button visibility on mobile */
-            .nav-icons .donate-button {
-                display: none; /* Hide desktop donate button on mobile */
-            }
-
-            .nav-bar .mobile-only-donate {
-                display: block; /* Show mobile specific donate button in the expanded menu */
-                margin-top: 20px; /* Space above mobile button */
-            }
-
-            .nav-bar ul li.mobile-only-donate a {
-                background-color: #D4AF37; /* Gold */
-                color: #6e231d; /* Dark red */
-                padding: 10px 20px;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: bold;
-                transition: background-color 0.3s ease;
-                display: inline-block; /* Allows padding and alignment */
-                border: none; /* Ensure no extra border */
-            }
-
-            .nav-bar ul li.mobile-only-donate a:hover {
-                background-color: #c09f2d;
-            }
-
-            /* Floating button position and blinking animation for mobile */
-            .floating-donate-btn {
-                bottom: 20px;
-                left: 50%; /* Move to the horizontal center */
-                right: auto; /* Override right positioning */
-                transform: translateX(-50%); /* Adjust by half its width to truly center */
-                padding: 12px 20px; /* Slightly smaller button on mobile */
-                font-size: 1em;
-                animation: pulseBorder 1.5s infinite ease-in-out; /* Apply blinking animation */
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); /* Initial shadow for animation */
-            }
-
-            .floating-donate-btn:hover {
-                transform: translateX(-50%) translateY(-3px); /* Keep centered, add hover lift */
-            }
-        }
-
-        @media (max-width: 600px) {
-            /* Further adjustments for very small screens if needed */
-            .logo img {
-                height: 60px; /* Smaller logo on very small screens */
-            }
-            /* Ensure info bar remains centered */
-            .header-info-bar .container {
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 5px;
-                text-align: center;
-            }
-            .header-info-bar span {
-                text-align: center;
-            }
-            .pdf-grid {
-                grid-template-columns: 1fr; /* Stack PDFs on very small screens */
-            }
-        }
-
-        /* Keyframes for the blinking animation */
-        @keyframes pulseBorder {
-            0% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); /* Gold with opacity */
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); /* Expand and fade out */
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); /* Return to start */
-            }
-        }
-
-        /* Copy notification style */
-        #copy-notification {
-            position: fixed;
-            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 2000;
+        }
+        .footer-column .contact-info p {
+            justify-content: center;
+        }
+        .footer-bottom {
+            flex-direction: column;
+            padding: 10px 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .logo img {
+            height: 60px;
+        }
+        .header-info-bar .container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            text-align: center;
+        }
+        .header-info-bar span {
+            text-align: center;
         }
 
-        #copy-notification.show {
-            opacity: 1;
-            visibility: visible;
+        /* PDF section adjustments for smallest screens */
+        .pdf-preview-section {
+            padding: 50px 0; /* Less vertical padding */
         }
-    </style>
+
+        .pdf-preview-section h2 {
+            font-size: 2em; /* Smaller title */
+            margin-bottom: 20px;
+        }
+
+        .pdf-preview-section .section-intro-text {
+            font-size: 1em;
+            margin-bottom: 30px;
+            padding: 0 10px; /* Horizontal padding for text */
+        }
+
+        .pdf-grid {
+            max-width: 100%; /* Allow full width */
+            padding: 0 10px; /* Adjust padding */
+            gap: 20px; /* Further reduce gap between main cards */
+        }
+
+        .pdf-item h3 {
+            font-size: 1.2em; /* Even smaller heading */
+            padding: 15px 10px;
+        }
+
+        .project-description {
+            padding: 10px 15px; /* Smaller padding */
+            font-size: 0.95em; /* Slightly smaller text */
+            line-height: 1.6;
+        }
+
+        /* --- MODIFIED FOR STACKING ON MOBILE --- */
+        .gaushala-pdfs {
+            flex-direction: column; /* Stack children vertically on mobile */
+            padding: 10px; /* Reduced padding inside the gaushala-pdfs container */
+            gap: 15px; /* Reduced gap between individual PDFs within the group */
+            max-height: 600px; /* **Crucial for mobile**: Limit height of scrollable PDF area */
+        }
+
+        .pdf-sub-item {
+            flex-basis: 100%; /* Take full width on mobile */
+            max-width: 100%; /* Ensure it doesn't exceed 100% */
+            margin-bottom: 0; /* Ensure no extra margin */
+        }
+
+        .pdf-embed {
+            height: 200px; /* **Significantly reduce iframe height for mobile** */
+        }
+
+        .pdf-download-link {
+            padding: 10px 12px; /* Smaller button padding */
+            font-size: 0.9em;
+        }
+    }
+
+    /* Keyframes for the blinking animation */
+    @keyframes pulseBorder {
+        0% {
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+        }
+    }
+
+    /* Copy notification style */
+    #copy-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 2000;
+    }
+
+    #copy-notification.show {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
 </head>
 
 <body>
@@ -563,40 +616,61 @@
     <section class="pdf-preview-section">
         <div class="container">
             <h2>Our CSR Impact Reports & Documents</h2>
-            <p class="section-intro-text">Explore our detailed reports and documents showcasing our commitment to community welfare, environmental sustainability, and ethical cow protection.</p>
+            <p class="section-intro-text">
+                Explore our detailed reports and documents showcasing our commitment to community welfare, environmental sustainability, and ethical cow protection.
+            </p>
 
             <div class="pdf-grid">
                 <div class="pdf-item">
-                    <h3>Development of 170 Acre Farmland </h3>
+                    <h3>Development of 170 Acre Farmland</h3>
                     <iframe src="pdfs/csr_report_2024.pdf" class="pdf-embed" title="Annual CSR Report 2024"></iframe>
-                    <a href="pdfs/csr_report_2024.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
+                    <a href="pdfs/csr_report_2024.pdf" target="_blank" class="pdf-download-link">
+                        View/Download PDF <i class="fas fa-download"></i>
+                    </a>
                 </div>
-
+<br>
                 <div class="pdf-item">
                     <h3>Gaushala Project Plan</h3>
-                    <iframe src="pdfs/SHEET_1_PLOT_LAYOUT_MALDUNGE_GAUNSHALA.pdf" class="pdf-embed" title="Gaushala Project Plan"></iframe>
-                    <a href="pdfs/SHEET_1_PLOT_LAYOUT_MALDUNGE_GAUNSHALA.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
-                </div>
+                    <p class="project-description">
+                        <strong>Small Cow Sheds:</strong> 9 nos. x 5,400 sq.ft. = 48,600 sq.ft.<br>
+                        <strong>Big Cow Sheds:</strong> 3 nos. x 8,000 sq.ft. = 24,000 sq.ft.<br>
+                        <strong>Total Cow Shed:</strong> 72,600 sq.ft.<br>
+                        <strong>Total No of Cows:</strong> 726 Cows (100 sq.ft. per Cow)<br>
+                        <strong>Animal Hospital:</strong> 8,000 sq.ft.<br>
+                        <strong>Workshop and Seminar:</strong> 8,000 sq.ft.<br>
+                        <strong>Admin Area:</strong> 8,000 sq.ft.
+                    </p>
 
-                <div class="pdf-item">
-                    <h3>Community Outreach Summary</h3>
-                    <iframe src="pdfs/sheet2.pdf" class="pdf-embed" title="Community Outreach Summary"></iframe>
-                    <a href="pdfs/sheet2.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
-                </div>
+                    <div class="gaushala-pdfs">
+                        <div class="pdf-sub-item">
+                            <iframe src="pdfs/SHEET_1_PLOT_LAYOUT_MALDUNGE_GAUNSHALA.pdf" class="pdf-embed" title="Gaushala Project Layout"></iframe>
+                            <a href="pdfs/SHEET_1_PLOT_LAYOUT_MALDUNGE_GAUNSHALA.pdf" target="_blank" class="pdf-download-link">
+                                View/Download Layout Plan <i class="fas fa-download"></i>
+                            </a>
+                        </div>
 
-                <div class="pdf-item">
-                    <h3>Environmental Initiatives Overview</h3>
-                    <iframe src="pdfs/sheet3.pdf." class="pdf-embed" title="Environmental Initiatives Overview"></iframe>
-                    <a href="pdfs/sheet3.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
-                </div>
+                        <div class="pdf-sub-item">
+                            <iframe src="pdfs/sheet2.pdf" class="pdf-embed" title="Gaushala Project Sheet 2"></iframe>
+                            <a href="pdfs/sheet2.pdf" target="_blank" class="pdf-download-link">
+                                View/Download Sheet 2 <i class="fas fa-download"></i>
+                            </a>
+                        </div>
 
-                <div class="pdf-item">
-                    <h3>Volunteer Program Guidelines</h3>
-                    <iframe src="pdfs/sheet4.pdf" class="pdf-embed" title="Volunteer Program Guidelines"></iframe>
-                    <a href="pdfs/sheet4.pdf" target="_blank" class="pdf-download-link">View/Download PDF <i class="fas fa-download"></i></a>
-                </div>
+                        <div class="pdf-sub-item">
+                            <iframe src="pdfs/sheet3.pdf" class="pdf-embed" title="Proposed Gaushala Panvel"></iframe>
+                            <a href="pdfs/sheet3.pdf" target="_blank" class="pdf-download-link">
+                                View/Download Proposed Panvel Plan <i class="fas fa-download"></i>
+                            </a>
+                        </div>
 
-                
+                        <div class="pdf-sub-item">
+                            <iframe src="pdfs/sheet4.pdf" class="pdf-embed" title="Gaushala Project Sheet 4"></iframe>
+                            <a href="pdfs/sheet4.pdf" target="_blank" class="pdf-download-link">
+                                View/Download Sheet 4 <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -643,12 +717,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>Copyright © 2025 Goraksha Panvel</p>
-            <div class="language-selector">
-                <select>
-                    <option value="en">English</option>
-                </select>
-            </div>
+            <p>Copyright © Panjarpol Gorakshan Sanstha</p>
+            
         </div>
     </footer>
 

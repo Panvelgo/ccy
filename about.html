@@ -6,8 +6,8 @@
     <title>Shri Panjarpol Gau-Raksha Sanstha - About Us</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Specific styles for About Us Page */
+ <style>
+    /* Specific styles for About Us Page */
 /* Specific styles for About Us Page */
 .header {
     position: sticky;
@@ -68,8 +68,6 @@
     }
 }
 
----
-
 /* About Content Section */
 .about-content-section {
     padding: 60px 0;
@@ -81,13 +79,15 @@
     transform: translateY(20px);
     animation: fadeInSlideUp 0.8s forwards ease-out;
     animation-delay: 0.6s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Applied font */
+    color: #333; /* Applied base text color */
 }
 
 .about-content-section h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5em;
-    color: #e65100;
+    color: #6e231d; /* Changed from #e65100 to accent color */
 }
 
 .about-intro {
@@ -126,19 +126,19 @@
     transform: scale(1.03);
 }
 
----
-
 /* Mission & Objective */
 .mission-objective {
     margin-top: 50px;
-    background: #f4fff3;
+    background: #ffffff; /* Changed background color to match light gray from PDF section */
     width: 100%;
     padding: 60px 0; /* Added padding to the section itself for consistency */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Applied font */
+    color: #333; /* Applied base text color */
 }
 
 .mission-objective h3 {
     font-size: 2em;
-    color: #e65100;
+    color: #6e231d; /* Changed from #e65100 to accent color */
     margin-bottom: 40px; /* Increased margin for better separation */
     display: flex;
     align-items: center;
@@ -167,7 +167,7 @@
     margin-bottom: 0;
     border-radius: 10px;
     font-weight: normal;
-    color: #333;
+    color: #333; /* Ensured text color */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
@@ -183,6 +183,7 @@
 }
 
 .objectives-list li img {
+    /* Retaining original intent, but consider if these are actual image icons */
     width: 60%; /* This might be too large for icons, consider max-width or fixed width */
     max-width: 100px; /* Suggestion: Set a max-width for image icons */
     height: auto; /* Use auto for height to maintain aspect ratio */
@@ -193,7 +194,7 @@
 }
 
 .objectives-list li strong {
-    color: #e65100;
+    color: #6e231d; /* Changed from #e65100 to accent color */
     font-size: 1.5em;
     margin-bottom: 10px;
     display: block;
@@ -203,14 +204,13 @@
     margin: 0;
     font-weight: normal;
     line-height: 1.6;
+    color: #555; /* Slightly lighter for body text */
 }
-
----
 
 /* Committee Section */
 .committee-section {
     padding: 60px 0;
-    background-color: #f8f8f8;
+    background-color: #fff; /* Changed from #f8f8f8 to #fff for consistency */
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -218,13 +218,15 @@
     transform: translateY(20px);
     animation: fadeInSlideUp 0.8s forwards ease-out;
     animation-delay: 0.9s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Applied font */
+    color: #333; /* Applied base text color */
 }
 
 .committee-section h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5em;
-    color: #e65100;
+    color: #6e231d; /* Changed from #e65100 to accent color */
 }
 
 .committee-members {
@@ -237,7 +239,7 @@
 }
 
 .member-card {
-    background-color: #fff;
+    background-color: #fcfcfc; /* Slightly off-white for distinction */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -246,7 +248,7 @@
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #eee;
+    border: 1px solid #e0e0e0; /* Harmonized border color */
 }
 
 .member-card:hover {
@@ -259,13 +261,13 @@
 }
 
 .member-card h4 {
-    color: #333;
+    color: #6e231d; /* Changed to accent color for names */
     margin-bottom: 5px;
     font-size: 1.4em;
 }
 
 .member-card p {
-    color: #e65100;
+    color: #D4AF37; /* Changed to gold accent color for roles */
     font-weight: bold;
     margin-bottom: 10px;
     font-size: 1.1em;
@@ -280,13 +282,138 @@
     width: 100%;
 }
 
----
+/* --- Responsive Adjustments for About Us Page --- */
 
-/* Responsive Adjustments for About Us Page */
+/* Tablet and Smaller Desktops */
+@media (max-width: 992px) {
+    .about-hero {
+        height: 300px;
+    }
+    .about-hero .hero-content h1 {
+        font-size: 2.5em;
+    }
 
+    .about-content-section {
+        padding: 40px 0;
+    }
+    .about-content-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .about-intro {
+        flex-direction: column; /* Stack intro content */
+        align-items: center;
+        text-align: center;
+    }
+    .about-intro .text-content,
+    .about-intro .image-content {
+        max-width: 90%; /* Allow wider content on tablet portrait */
+        padding: 0;
+    }
 
+    .mission-objective {
+        padding: 40px 0;
+    }
+    .mission-objective h3 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .objectives-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width */
+        gap: 20px;
+    }
 
-    </style>
+    .committee-section {
+        padding: 40px 0;
+    }
+    .committee-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .committee-members {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust min-width */
+        gap: 15px;
+    }
+    .member-card h4 {
+        font-size: 1.3em;
+    }
+    .member-card p {
+        font-size: 1em;
+    }
+}
+
+/* Mobile Devices (especially vertical orientation) */
+@media (max-width: 600px) {
+    .about-hero {
+        height: 250px;
+    }
+    .about-hero .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .about-content-section {
+        padding: 30px 0;
+    }
+    .about-content-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+    .about-intro {
+        gap: 20px;
+    }
+    .about-intro .text-content,
+    .about-intro .image-content {
+        max-width: 95%; /* Almost full width for mobile */
+    }
+
+    .mission-objective {
+        padding: 30px 0;
+    }
+    .mission-objective h3 {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+    .objectives-list {
+        grid-template-columns: 1fr; /* Stack vertically on very small screens */
+        gap: 15px;
+        padding: 0 15px; /* Add horizontal padding to prevent stretching to edges */
+    }
+    .objectives-list li {
+        padding: 15px;
+    }
+    .objectives-list li strong {
+        font-size: 1.3em;
+    }
+    .objectives-list li img {
+        max-width: 80px; /* Smaller icons on mobile */
+    }
+
+    .committee-section {
+        padding: 30px 0;
+    }
+    .committee-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+    .committee-members {
+        grid-template-columns: 1fr; /* Stack vertically on very small screens */
+        gap: 15px;
+        padding: 0 15px; /* Add horizontal padding */
+    }
+    .member-card {
+        padding: 15px;
+    }
+    .member-card h4 {
+        font-size: 1.2em;
+    }
+    .member-card p {
+        font-size: 0.95em;
+    }
+    .member-card .contact-detail {
+        font-size: 0.85em;
+    }
+}
+</style>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
@@ -400,10 +527,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>Copyright © 2025 Goraksha Panvel</p>
-            <div class="language-selector">
-                <select><option value="en">English</option></select>
-            </div>
+            <p>Copyright © Panjarpol Gorakshan Sanstha</p>
+            
         </div>
     </footer>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shri Panjarpol Gau-Raksha Sanstha - Home</title>
+    <title>Panjarpol Gorakshan Sanstha - Home</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -77,20 +77,34 @@ h2::after {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #D4AF37; /* Gold underline */
+    background-color: #ffffff; /* Gold underline */
     border-radius: 2px;
 }
 
 /* Hero Section for Home Page */
+/* General Hero Section Styling */
 .home-hero {
     position: relative;
     width: 100%;
-    height: 550px; /* Slightly increased height */
+    height: 600px; /* Adjust as needed for desktop */
     overflow: hidden;
-    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.home-hero .slide {
+.slides-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -99,82 +113,224 @@ h2::after {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1.2s ease-in-out; /* Slower transition for a smoother feel */
+    transition: opacity 1s ease-in-out; /* Smooth transition for slides */
 }
 
-.home-hero .slide.active {
+.slide.active {
     opacity: 1;
 }
 
-.home-hero .slide::before {
+/* Overlay for better text readability */
+.slide::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay for better text readability */
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
     z-index: 1;
 }
 
-.home-hero .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
+.hero-content {
+    position: relative;
     z-index: 2;
     padding: 20px;
+    max-width: 800px;
 }
 
-.home-hero .hero-content h1 {
+.hero-content h1 {
+    font-size: 3.8em; /* Larger, more impactful heading */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    line-height: 1.2;
     color: #fff;
-    font-size: 4.5em; /* Larger, more impactful heading */
-    margin-bottom: 15px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
-.home-hero .hero-content p {
-    font-size: 1.6em; /* Slightly larger paragraph */
-    max-width: 900px; /* Wider text area */
-    margin: 0 auto 40px auto; /* More space below paragraph */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    line-height: 1.6; /* Improved readability */
+.hero-content p {
+    font-size: 1.6em; /* Clear and readable slogan */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.5;
+    color: #f0f0f0;
 }
 
-.home-hero .slider-nav {
+/* Call to Action Button */
+.hero-donate-btn {
+    display: inline-block;
+    background-color: #D4AF37; /* Gold accent color */
+    color: #6e231d; /* Dark red/brown text */
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-donate-btn:hover {
+    background-color: #c09f2d; /* Darker gold on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-donate-btn i {
+    margin-left: 10px;
+}
+
+
+/* Slider Navigation Arrows */
+.slider-nav button {
     position: absolute;
     top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
     transform: translateY(-50%);
-    z-index: 3;
-    padding: 0 30px; /* More padding */
-}
-
-.home-hero .slider-nav button {
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly more opaque */
+    background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     border: none;
-    padding: 15px; /* Smaller, more elegant buttons */
-    font-size: 1.8em; /* Larger icons */
+    padding: 15px 18px;
     cursor: pointer;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 50px; /* Fixed width and height for perfect circle */
-    height: 50px;
+    font-size: 1.8em;
+    z-index: 3;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50%; /* Circular buttons */
+    width: 60px; /* Fixed width for consistent circle */
+    height: 60px; /* Fixed height for consistent circle */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.home-hero .slider-nav button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    transform: scale(1.1);
+.slider-nav button.prev-slide {
+    left: 20px;
 }
+
+.slider-nav button.next-slide {
+    right: 20px;
+}
+
+.slider-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Slide Dots for Navigation */
+.slide-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot.active {
+    background-color: #D4AF37; /* Active dot is gold */
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Animations for hero content */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards ease-out;
+}
+
+.fade-in-up.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.fade-in-up.delay-2 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .home-hero {
+        height: 500px; /* Adjust height for tablets */
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .hero-content p {
+        font-size: 1.4em;
+    }
+    .slider-nav button {
+        padding: 12px 15px;
+        font-size: 1.5em;
+        width: 50px;
+        height: 50px;
+    }
+    .slider-nav button.prev-slide {
+        left: 10px;
+    }
+    .slider-nav button.next-slide {
+        right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-hero {
+        height: 100vh; /* Make it full screen height on mobile */
+    }
+    .hero-content h1 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    .hero-donate-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .slider-nav button {
+        padding: 10px 12px;
+        font-size: 1.2em;
+        width: 40px;
+        height: 40px;
+    }
+    .slider-nav button.prev-slide {
+        left: 5px;
+    }
+    .slider-nav button.next-slide {
+        right: 5px;
+    }
+    .slide-dots {
+        bottom: 10px;
+        gap: 8px;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
 
 /* About Us Section - Home Page */
 .home-about-us {
@@ -627,15 +783,7 @@ h2::after {
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-    .home-hero {
-        height: 450px;
-    }
-    .home-hero .hero-content h1 {
-        font-size: 3.5em;
-    }
-    .home-hero .hero-content p {
-        font-size: 1.3em;
-    }
+  
 
     .home-about-us, .home-section-left-image, .home-section-right-image {
         flex-direction: column;
@@ -698,22 +846,7 @@ h2::after {
         width: 60px;
     }
 
-    .home-hero {
-        height: 400px;
-    }
-    .home-hero .hero-content h1 {
-        font-size: 2.8em;
-    }
-    .home-hero .hero-content p {
-        font-size: 1.1em;
-        margin-bottom: 30px;
-    }
-    .home-hero .slider-nav button {
-        padding: 12px;
-        font-size: 1.5em;
-        width: 45px;
-        height: 45px;
-    }
+  
 
     .home-about-us, .home-section-left-image, .home-section-right-image {
         padding: 50px 15px;
@@ -763,24 +896,7 @@ h2::after {
         width: 50px;
     }
 
-    .home-hero {
-        height: 350px;
-    }
-    .home-hero .hero-content h1 {
-        font-size: 2.2em;
-    }
-    .home-hero .hero-content p {
-        display: none; /* Hide paragraph on very small screens for brevity */
-    }
-    .home-hero .slider-nav {
-        padding: 0 15px;
-    }
-    .home-hero .slider-nav button {
-        padding: 10px;
-        font-size: 1.2em;
-        width: 40px;
-        height: 40px;
-    }
+    
 
     .home-about-us, .home-section-left-image, .home-section-right-image, .stats-section, .donate-section, .faq-section, .social-presence-section {
         padding: 30px 10px;
@@ -1012,18 +1128,28 @@ header {
 </head>
 <body>
     <div id="navbar-placeholder"></div>
-    <section class="home-hero">
-        <div class="slide" style="background-image: url('images/home/image3.jpg');"></div>
-        <div class="slide" style="background-image: url('images/home/image5.jpg');"></div>
-        <div class="hero-content">
-            <h1>Shri Panjarpol Gau-Raksha Sanstha</h1>
-            <p>Committed to the preservation, protection, and welfare of cows.</p>
+   <section class="home-hero">
+    <div class="slides-container">
+        <div class="slide" style="background-image: url('images/beni/image4.jpg');"></div>
+        <div class="slide active" style="background-image: url('images/home/image5.jpg');"></div>
+        <div class="slide" style="background-image: url('images/about-us/image6.jpg');"></div>
+        
         </div>
-        <div class="slider-nav">
-            <button class="prev-slide">&#10094;</button>
-            <button class="next-slide">&#10095;</button>
+
+    <div class="hero-content">
+        <h1 class="fade-in-up">Panjarpol Gorakshan Sanstha</h1>
+        <p class="fade-in-up delay-1">Committed to the preservation, protection, and welfare of cows.</p>
+     
+    </div>
+
+    <div class="slider-nav">
+        <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div class="slide-dots">
         </div>
-    </section>
+</section>
 
     <main>
         <br>
@@ -1031,7 +1157,7 @@ header {
             <section class="home-about-us">
                 <div class="content">
                     <h2>About us</h2>
-                    <p>Shri Panjarpol Gau-Raksha Sanstha is a non-governmental organization (NGO) committed to the preservation, protection, and welfare of cows. Founded on the principles of compassion, respect, and sustainability, our organization strives to create a harmonious coexistence between humans and cows. With a deep-rooted belief in the sacredness of cows, we work tirelessly to safeguard their well-being and promote their significance in society.</p>
+                    <p>Panjarpol Gorakshan Sanstha is a non-governmental organization (NGO) committed to the preservation, protection, and welfare of cows. Founded on the principles of compassion, respect, and sustainability, our organization strives to create a harmonious coexistence between humans and cows. With a deep-rooted belief in the sacredness of cows, we work tirelessly to safeguard their well-being and promote their significance in society.</p>
                     <a href="about.html" class="read-more-btn">Read More</a>
                 </div>
                 <div class="image">
@@ -1060,7 +1186,7 @@ header {
 <section class="csr-activities-section">
     <div class="container">
         <h2>Our Commitment: CSR & Sustainable Development</h2>
-        <p class="section-intro-text">At Shri Panjarpol Gau-Raksha Sanstha, our vision extends beyond protection. We are dedicated to pioneering sustainable practices and fostering community well-being through our comprehensive CSR initiatives.</p>
+        <p class="section-intro-text">At Panjarpol Gorakshan Sanstha, our vision extends beyond protection. We are dedicated to pioneering sustainable practices and fostering community well-being through our comprehensive CSR initiatives.</p>
 
         <div class="csr-content-row">
             <div class="csr-image-wrapper">
@@ -1072,15 +1198,7 @@ header {
             </div>
         </div>
 
-        <div class="csr-content-row reverse-layout">
-            <div class="csr-image-wrapper">
-                <img src="images/about-us/csr2.png" alt="Proposed Gaushala Movement Mapping" class="csr-image">
-            </div>
-            <div class="csr-text-content">
-                <h3>Efficient Movement & Care</h3>
-                <p>The proposed design incorporates advanced movement mapping for cows, staff, and services, minimizing stress on animals and maximizing operational efficiency. This thoughtful planning ensures seamless daily routines, from feeding to medical care, enhancing overall well-being.</p>
-            </div>
-        </div>
+    
 
         <div class="csr-button-container">
             <a href="csr.html" class="main-cta-button">Know More About Our CSR</a>
@@ -1216,7 +1334,7 @@ header {
             </div>
         </div>
         <div class="footer-bottom">
-            <p>Copyright © 2025 Goraksha Panvel </p>
+            <p>Copyright © Panjarpol Gorakshan Sanstha </p>
              
         </div>
     </footer>

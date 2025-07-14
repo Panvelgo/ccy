@@ -8,215 +8,284 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Specific styles for Contact Us Page */
+     /* General Body and Container Styles (assuming these are from your style.css or a base stylesheet) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
 
-        /* Contact Hero */
-        .contact-hero {
-            background-image: url('images/beni/image5.jpg'); /* Use a relevant hero image */
-            height: 350px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        .contact-hero .hero-content h1 {
-            font-size: 3em;
-        }
+/* Hero Section Base Styles (assuming these are from your style.css or a base stylesheet) */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
 
-        /* Contact Section */
-        .contact-section {
-            padding: 60px 0;
-            background-color: #f8f8f8;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+    z-index: 1;
+}
 
-        .contact-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            color: #e65100;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
 
-        .contact-content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        }
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
 
-        .contact-info-col {
-            flex: 1;
-            min-width: 300px;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
+.hero-content p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-        .contact-info-col h3 {
-            color: #ff7043;
-            font-size: 1.8em;
-            margin-bottom: 25px;
-        }
 
-        .contact-info-col p {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            color: #555;
-        }
 
-        .contact-info-col p i {
-            margin-right: 15px;
-            color: #e65100;
-            font-size: 1.3em;
-        }
+/* Specific styles for Contact Us Page */
 
-        .contact-info-col .map-placeholder {
-            width: 100%;
-            
-            background-color: #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+/* Contact Hero */
+.contact-hero {
+    background-image: url('images/beni/image5.jpg'); /* Use a relevant hero image */
+    height: 350px;
+}
 
-        .contact-info-col .map-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures image covers area */
-        }
+.contact-hero .hero-content h1 {
+    font-size: 3em;
+}
 
-        /* Contact Form */
-        .contact-form-col {
-            flex: 2;
-            min-width: 300px;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
+/* Contact Section */
+.contact-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-        .contact-form-col h3 {
-            color: #ff7043;
-            font-size: 1.8em;
-            margin-bottom: 25px;
-            text-align: center;
-        }
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #e65100;
+}
 
-        .contact-form-col form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.contact-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
 
-        .contact-form-col label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
+.contact-info-col {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-        .contact-form-col input[type="text"],
-        .contact-form-col input[type="email"],
-        .contact-form-col textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-            box-sizing: border-box; /* Include padding in element's total width and height */
-            transition: border-color 0.3s ease;
-        }
+.contact-info-col h3 {
+    color: #ff7043;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
 
-        .contact-form-col input[type="text"]:focus,
-        .contact-form-col input[type="email"]:focus,
-        .contact-form-col textarea:focus {
-            border-color: #e65100;
-            outline: none;
-            box-shadow: 0 0 5px rgba(230, 81, 0, 0.3);
-        }
+.contact-info-col p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
 
-        .contact-form-col textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+.contact-info-col p i {
+    margin-right: 15px;
+    color: #e65100;
+    font-size: 1.3em;
+}
 
-        .contact-form-col button {
-            background-color: #e65100;
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            width: fit-content; /* Button size based on content */
-            align-self: center; /* Center the button */
-        }
+.contact-info-col .map-placeholder {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        .contact-form-col button:hover {
-            background-color: #bf360c;
-            transform: translateY(-2px);
-        }
+.contact-info-col .map-placeholder iframe { /* Target the iframe directly */
+    width: 100%;
+    height: 250px; /* Set a fixed height for the map */
+    border: 0;
+    border-radius: 8px;
+}
 
-        /* Responsive Adjustments for Contact Us Page */
-        @media (max-width: 992px) {
-            .contact-content {
-                flex-direction: column;
-            }
-            .contact-info-col, .contact-form-col {
-                min-width: unset;
-                width: 100%;
-            }
-            .contact-info-col h3, .contact-form-col h3 {
-                text-align: center;
-            }
-            .contact-info-col p {
-                justify-content: center; /* Center contact info details */
-            }
-        }
 
-        @media (max-width: 768px) {
-            .contact-hero {
-                height: 250px;
-            }
-            .contact-hero .hero-content h1 {
-                font-size: 2.2em;
-            }
-            .contact-section {
-                padding: 40px 15px;
-            }
-            .contact-section h2 {
-                font-size: 2em;
-                margin-bottom: 30px;
-            }
-            .contact-info-col, .contact-form-col {
-                padding: 20px;
-            }
-            .contact-info-col h3, .contact-form-col h3 {
-                font-size: 1.5em;
-            }
-            .contact-info-col p {
-                font-size: 1em;
-            }
-            .contact-form-col button {
-                padding: 12px 25px;
-                font-size: 1em;
-            }
-        }
+/* Contact Form */
+.contact-form-col {
+    flex: 2;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-        @media (max-width: 480px) {
-            .contact-info-col p {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-info-col p i {
-                margin-right: 0;
-                margin-bottom: 5px;
-            }
-        }
+.contact-form-col h3 {
+    color: #ff7043;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Note: The form itself is now an iframe, so these styles will apply to elements *around* the iframe, not within it.
+   If you were using a native HTML form, these styles would be relevant. */
+.contact-form-col form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form-col label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form-col input[type="text"],
+.contact-form-col input[type="email"],
+.contact-form-col textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-col input[type="text"]:focus,
+.contact-form-col input[type="email"]:focus,
+.contact-form-col textarea:focus {
+    border-color: #e65100;
+    outline: none;
+    box-shadow: 0 0 5px rgba(230, 81, 0, 0.3);
+}
+
+.contact-form-col textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form-col button {
+    background-color: #e65100;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: fit-content; /* Button size based on content */
+    align-self: center; /* Center the button */
+}
+
+.contact-form-col button:hover {
+    background-color: #bf360c;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments for Contact Us Page */
+@media (max-width: 992px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    .contact-info-col, .contact-form-col {
+        min-width: unset;
+        width: 100%;
+    }
+    .contact-info-col h3, .contact-form-col h3 {
+        text-align: center;
+    }
+    .contact-info-col p {
+        justify-content: center; /* Center contact info details */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 250px;
+    }
+    .contact-hero .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .contact-section {
+        padding: 40px 15px;
+    }
+    .contact-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .contact-info-col {
+        padding: 20px; /* Keep padding for contact info column */
+    }
+    .contact-form-col {
+        padding: 0; /* Remove padding for the Google Form section */
+        box-shadow: none; /* Optionally remove box-shadow for a seamless look */
+    }
+    .contact-info-col h3, .contact-form-col h3 {
+        font-size: 1.5em;
+    }
+    .contact-info-col p {
+        font-size: 1em;
+    }
+    .contact-form-col button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-col p {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-info-col p i {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
     </style>
 </head>
 <body>
@@ -309,7 +378,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>Copyright © 2025 Goraksha Panvel </p>
+            <p>Copyright © Panjarpol Gorakshan Sanstha </p>
              
         </div>
     </footer>
